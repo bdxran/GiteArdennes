@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - gite",
+            "request": "launch",
+            "mainClass": "gite.gite",
+            "projectName": "gs-maven"
+        }
+    ]
+}
