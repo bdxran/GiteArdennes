@@ -3,33 +3,27 @@ package be.gite.entity;
 import javax.persistence.*;
 
 @Entity
-public class Gite {
+@Table(name="Gites")
+public class Gites {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idGite", nullable=false)
 	private Integer idGite;
+	
+	@Column(name="idAdmin", nullable=false)
 	private Integer idAdmin;
+	@Column(name="nom", nullable=false)
 	private String nom;
+	@Column(name="adresse1", nullable=false)
 	private String adresse1;
+	@Column(name="adresse2", nullable=false)
 	private String adresse2;
+	@Column(name="description", nullable=false)
 	private String description;
 	
-	public Gite() {
-		this.idGite = 0;
-		this.idAdmin = 0;
-		this.nom = "";
-		this.adresse1 = "";
-		this.adresse2 = "";
-		this.description = "";
-	}
-	
-	public Gite(String nom, String adresse1, String adresse2, String description) {
-		this.idGite = 0;
-		this.idAdmin = 0;
-		this.nom = nom;
-		this.adresse1 = adresse1;
-		this.adresse2 = adresse2;
-		this.description = description;
+	public Gites() {
+		super();
 	}
 	
 	public Integer getIdGite() {

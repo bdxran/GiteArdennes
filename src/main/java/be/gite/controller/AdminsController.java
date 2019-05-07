@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import be.gite.entity.Gite;
-import be.gite.repository.GiteRepository;
+import be.gite.entity.Admins;
+import be.gite.repository.AdminsRepository;
 
 @Controller
-@RequestMapping(path="/gite")
-public class GiteController {
-	
+@RequestMapping(path="/admins")
+public class AdminsController {
 	@Autowired
-	private GiteRepository giteRepository;
+	private AdminsRepository adminsRepository;
 	
 	@GetMapping(path="/add")
-	public @ResponseBody String addNewGite (@RequestParam String nom, @RequestParam String adresse1, @RequestParam String adresse2, @RequestParam String description) {
-		System.out.println(nom+adresse1+adresse2+description);
+	public @ResponseBody String addNewAdmins (@RequestParam String login,@RequestParam String mdp) {
 		try {
-			Gite gite = new Gite(nom,adresse1,adresse2,description);
-			giteRepository.save(gite);
+			Admins admins = new Admins();
+			admins.setLogin(login);
+			admins.setMdp(mdp);
+			adminsRepository.save(admins);
 		} catch(Exception e) {
 			return "It'snt recording!";
 		}
@@ -30,7 +30,7 @@ public class GiteController {
 	}
 	
 	@GetMapping(path="/all")
-	public @ResponseBody Iterable<Gite> getAllGite() {
-		return giteRepository.findAll();
+	public @ResponseBody Iterable<Admins> getAllAdmins() {
+		return adminsRepository.findAll();
 	}
 }
