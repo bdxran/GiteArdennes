@@ -1,40 +1,40 @@
 package be.gite.controller;
 
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import be.gite.entity.Gites;
-import be.gite.repository.GitesRepository;
+import be.gite.service.GitesService;
 
-@Controller
+@RestController
 @RequestMapping(path="/gites")
 public class GitesController {
 	
-	@Autowired
-	private GitesRepository gitesRepository;
+	private static final Logger logger = LoggerFactory.getLogger(Gites.class);
 	
-	@GetMapping(path="/add")
-	public @ResponseBody String addNewGite (@RequestParam String idAdmin,@RequestParam String nom, @RequestParam String adresse1, @RequestParam String adresse2, @RequestParam String description) {
-		try {
-			Gites gites = new Gites();
-			gites.setNom(idAdmin);
-			gites.setNom(nom);
-			gites.setAdresse1(adresse1);
-			gites.setAdresse2(adresse2);
-			gites.setDescription(description);
-			gitesRepository.save(gites);
-		} catch(Exception e) {
-			return "It'snt recording!";
-		}
-		return "It's recording!";
+	@Autowired
+	private GitesService gitesService;
+	
+	@GetMapping
+	public @ResponseBody Iterable<Gites> getAllGites() {
+		return gitesService.findAll();
 	}
 	
-	@GetMapping(path="/all")
-	public @ResponseBody Iterable<Gites> getAllGite() {
-		return gitesRepository.findAll();
+	@PostMapping(consumes = "application/json")
+	public ResponseEntity<Gites> newGite (@RequestBody Gites gite) {
+		if(gite == null) {
+			logger.info("Gite is null, itsn't recording",gite);
+			return new ResponseEntity<Gites>(HttpStatus.NOT_FOUND);
+		} else if(gitesService.exist(gite)) {
+			logger.info("Gite is exist, itsn't recording",gite);
+			return new ResponseEntity<Gites>(HttpStatus.CONFLICT);
+		} else {
+			gitesService.create(gite);
+			logger.info("Gite is recording",gite);
+			return new ResponseEntity<Gites>(gite,HttpStatus.CREATED);
+		}	
 	}
 }

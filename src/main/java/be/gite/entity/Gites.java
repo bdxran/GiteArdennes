@@ -9,10 +9,10 @@ public class Gites {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idGite", nullable=false)
-	private Integer idGite;
+	private Integer idGite;		//Primary Key
 	
 	@Column(name="idAdmin", nullable=false)
-	private Integer idAdmin;
+	private Integer idAdmin;	//Foreign Key
 	@Column(name="nom", nullable=false)
 	private String nom;
 	@Column(name="adresse1", nullable=false)

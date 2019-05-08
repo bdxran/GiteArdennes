@@ -1,36 +1,39 @@
 package be.gite.controller;
 
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import be.gite.entity.Admins;
-import be.gite.repository.AdminsRepository;
+import be.gite.service.AdminsService;
 
-@Controller
+@RestController
 @RequestMapping(path="/admins")
 public class AdminsController {
-	@Autowired
-	private AdminsRepository adminsRepository;
+private static final Logger logger = LoggerFactory.getLogger(Admins.class);
 	
-	@GetMapping(path="/add")
-	public @ResponseBody String addNewAdmins (@RequestParam String login,@RequestParam String mdp) {
-		try {
-			Admins admins = new Admins();
-			admins.setLogin(login);
-			admins.setMdp(mdp);
-			adminsRepository.save(admins);
-		} catch(Exception e) {
-			return "It'snt recording!";
-		}
-		return "It's recording!";
+	@Autowired
+	private AdminsService adminsService;
+	
+	@GetMapping
+	public @ResponseBody Iterable<Admins> getAllAdmins() {
+		return adminsService.findAll();
 	}
 	
-	@GetMapping(path="/all")
-	public @ResponseBody Iterable<Admins> getAllAdmins() {
-		return adminsRepository.findAll();
+	@PostMapping(consumes = "application/json")
+	public ResponseEntity<Admins> newGite (@RequestBody Admins admin) {
+		if(admin == null) {
+			logger.info("Gite is null, itsn't recording",admin);
+			return new ResponseEntity<Admins>(HttpStatus.NOT_FOUND);
+		} else if(adminsService.exist(admin)) {
+			logger.info("Gite is exist, itsn't recording",admin);
+			return new ResponseEntity<Admins>(HttpStatus.CONFLICT);
+		} else {
+			adminsService.create(admin);
+			logger.info("Gite is recording",admin);
+			return new ResponseEntity<Admins>(admin,HttpStatus.CREATED);
+		}	
 	}
 }
