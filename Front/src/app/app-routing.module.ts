@@ -7,6 +7,7 @@ import { SigninComponent } from './signin/signin.component';
 const routes: Routes = [
   {path:"", component:WelcomeComponent},
   {path:"welcome", component:WelcomeComponent},
+  {path:"welcome/:username", component:WelcomeComponent},
   {path:"signin", component:SigninComponent},
   {path:"**", component:ErrorComponent},
 ];

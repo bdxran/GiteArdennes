@@ -10,6 +10,7 @@ import be.gite.entity.Gites;
 import be.gite.service.GitesService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path="/gites")
 public class GitesController {
 	

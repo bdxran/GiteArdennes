@@ -10,6 +10,7 @@ import be.gite.entity.Admins;
 import be.gite.service.AdminsService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path="/admins")
 public class AdminsController {
 	

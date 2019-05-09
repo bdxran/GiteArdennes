@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  username: string;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.username = this.route.snapshot.params['username'];
+    console.log(this.username)
   }
-
 }
