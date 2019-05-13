@@ -1,0 +1,12 @@
+form {
+    width: 30%;
+    margin: auto;
+}
+
+.card-header {
+    margin-bottom: 2%;
+}
+
+label {
+    float: left;
+}

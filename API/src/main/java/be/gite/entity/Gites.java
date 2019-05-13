@@ -11,8 +11,9 @@ public class Gites {
 	@Column(name="idGite", nullable=false)
 	private Integer idGite;		//Primary Key
 	
-	@Column(name="idAdmin", nullable=false)
-	private Integer idAdmin;	//Foreign Key
+	@ManyToOne
+	@JoinColumn(name="idAdmin")
+	private Admins idAdmin;
 	@Column(name="nom", nullable=false)
 	private String nom;
 	@Column(name="adresse1", nullable=false)
@@ -34,11 +35,11 @@ public class Gites {
 		this.idGite = idGite;
 	}
 	
-	public Integer getIdAdmin() {
+	public Admins getIdAdmin() {
 		return idAdmin;
 	}
 	
-	public void setIdAdmin(Integer idAdmin) {
+	public void setIdAdmin(Admins idAdmin) {
 		this.idAdmin = idAdmin;
 	}
 	

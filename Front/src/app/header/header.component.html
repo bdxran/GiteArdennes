@@ -16,9 +16,21 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Utilisateur</a>
-              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <div *ngIf="this.username == null" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" routerLink="/signin">Sign in</a>
-                <a *ngIf="this.username != null" class="dropdown-item" routerLink="">{{this.username}}</a>
+              </div>
+              <div *ngIf="this.username != null" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/administration">Profil</a>
+                <a class="dropdown-item" routerLink="/logout">Logout</a>
+              </div>
+            </li>
+            <li *ngIf="this.username != null"  class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Administration</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/signup">Ajouter un utilisateur</a>
+                <a class="dropdown-item" routerLink="/gite">Gite</a>
+                <a class="dropdown-item" routerLink="/reservation">Réservation</a>
               </div>
             </li>
           </ul>
@@ -27,5 +39,5 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
-      </nav>
-</header> 
+    </nav>
+</header>

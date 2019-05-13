@@ -10,7 +10,6 @@ import be.gite.entity.Admins;
 import be.gite.service.AdminsService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path="/admins")
 public class AdminsController {
 	
@@ -25,16 +24,16 @@ public class AdminsController {
 	}
 	
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<Admins> newGite (@RequestBody Admins admin) {
+	public ResponseEntity<Admins> newAdmin (@RequestBody Admins admin) {
 		if(admin == null) {
-			logger.info("Gite is null, itsn't recording",admin);
+			logger.info("Admin is null, itsn't recording",admin);
 			return new ResponseEntity<Admins>(HttpStatus.NOT_FOUND);
 		} else if(adminsService.exist(admin)) {
-			logger.info("Gite is exist, itsn't recording",admin);
+			logger.info("Admin is exist, itsn't recording",admin);
 			return new ResponseEntity<Admins>(HttpStatus.CONFLICT);
 		} else {
 			adminsService.create(admin);
-			logger.info("Gite is recording",admin);
+			logger.info("Admin is recording",admin);
 			return new ResponseEntity<Admins>(admin,HttpStatus.CREATED);
 		}	
 	}

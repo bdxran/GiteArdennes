@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BasicAuthentificateService } from '../service/basic-authentificate.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,16 @@ export class HeaderComponent implements OnInit {
 
   username: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+    private basicAuth: BasicAuthentificateService) { }
 
   ngOnInit() {
-    this.username = this.route.snapshot.params['username'];
+    this.username = this.basicAuth.getAuthenticatedUser();
+    console.log(this.username)
+  }
+
+  public getUsername() {
+    this.username = this.basicAuth.getAuthenticatedUser();
     console.log(this.username)
   }
 }

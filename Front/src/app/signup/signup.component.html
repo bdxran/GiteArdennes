@@ -1,0 +1,19 @@
+<app-header></app-header>
+<form class="text-center border border-light p-5">
+
+  <div class="card-header">
+    <h4 class="card-title mt-2">Ajouter un nouveau utilisateur</h4>
+  </div>
+
+  <label>Pseudo</label>
+  <input name='username' type='text' [(ngModel)]='username' class="form-control mb-4">
+  <label>Créer mot de passe</label>
+  <input name='password' type='password' [(ngModel)]='password' class="form-control mb-4">
+  <label>Confirmer mot de passe</label>
+  <input name='password' type='password' [(ngModel)]='confirmPassword' class="form-control mb-4">
+
+  <button class="btn btn-info btn-block my-4" (click)="basicInscrip()">Sign up</button>
+  <div *ngIf='invalidPassword'>Erreur : Les mots de passe ne correspondent pas!</div>
+
+</form>
+<app-footer></app-footer>

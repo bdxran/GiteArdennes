@@ -1,6 +1,9 @@
 package be.gite.entity;
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
+import be.gite.tool.PasswordTool;
 
 @Entity
 @Table(name="Admins")
@@ -10,6 +13,9 @@ public class Admins {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idAdmin")
 	private Integer idAdmin;
+	
+	@OneToMany(mappedBy = "idAdmin")
+	private Set<Gites> gite = new HashSet<>();
 	
 	@Column(name="login")
 	private String login;
@@ -49,7 +55,8 @@ public class Admins {
 	}
 	
 	public void setMdp(String mdp) {
-		this.mdp = mdp;
+		PasswordTool pwd = new PasswordTool();
+		this.mdp = pwd.encodePassword(mdp);
 	}
 
 	@Override

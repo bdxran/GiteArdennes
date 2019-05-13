@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <form class="text-center border border-light p-5">
 
   <p class="h4 mb-4">Sign in</p>
@@ -23,7 +22,7 @@
   <div *ngIf='invalidLogin'>Error : Bad Login</div>
 
   <p>Not a member?
-      <a href="">Register</a>
+      <a routerLink="/signup">Register</a>
   </p>
 
   <p>or sign in with:</p>
@@ -42,5 +41,4 @@
   </a>
 
 </form>
-
 <app-footer></app-footer>

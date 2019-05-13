@@ -10,7 +10,6 @@ import be.gite.entity.Gites;
 import be.gite.service.GitesService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path="/gites")
 public class GitesController {
 	
@@ -33,6 +32,7 @@ public class GitesController {
 			logger.info("Gite is exist, itsn't recording",gite);
 			return new ResponseEntity<Gites>(HttpStatus.CONFLICT);
 		} else {
+			System.out.println(gite);
 			gitesService.create(gite);
 			logger.info("Gite is recording",gite);
 			return new ResponseEntity<Gites>(gite,HttpStatus.CREATED);

@@ -11,6 +11,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SigninComponent } from './signin/signin.component';
 import { HttpInterceptorBasicAuthService } from './service/http-interceptor-basic-auth.service';
+import { SignupComponent } from './signup/signup.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { GiteComponent } from './gite/gite.component';
+import { NewGiteComponent } from './new-gite/new-gite.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { HttpInterceptorBasicAuthService } from './service/http-interceptor-basi
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    SigninComponent
+    SigninComponent,
+    SignupComponent,
+    LogoutComponent,
+    AdministrationComponent,
+    GiteComponent,
+    NewGiteComponent,
   ],
   imports: [
     BrowserModule,
