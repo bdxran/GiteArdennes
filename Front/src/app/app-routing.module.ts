@@ -8,17 +8,18 @@ import { LogoutComponent } from './logout/logout.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { GiteComponent } from './gite/gite.component';
 import { NewGiteComponent } from './new-gite/new-gite.component';
+import { RouteGuardService } from './service/route-guard.service';
 
 const routes: Routes = [
-  {path:"", component:WelcomeComponent},
-  {path:"welcome", component:WelcomeComponent},
-  {path:"welcome/:username", component:WelcomeComponent},
+  {path:"", component:WelcomeComponent, canActivate:[RouteGuardService]},
+  {path:"welcome", component:WelcomeComponent, canActivate:[RouteGuardService]},
+  {path:"welcome/:username", component:WelcomeComponent, canActivate:[RouteGuardService]},
   {path:"signin", component:SigninComponent},
-  {path:"signup", component:SignupComponent},
+  {path:"signup", component:SignupComponent, canActivate:[RouteGuardService]},
   {path:"logout", component:LogoutComponent},
-  {path:"administration", component:AdministrationComponent},
-  {path:"gite", component:GiteComponent},
-  {path:"newGite", component:NewGiteComponent},
+  {path:"administration", component:AdministrationComponent, canActivate:[RouteGuardService]},
+  {path:"gite", component:GiteComponent, canActivate:[RouteGuardService]},
+  {path:"newGite", component:NewGiteComponent, canActivate:[RouteGuardService]},
   {path:"**", component:ErrorComponent},
 ];
 

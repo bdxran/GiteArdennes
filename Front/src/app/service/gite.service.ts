@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { API_URL } from '../app-constants';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Admins } from './admin.service';
 
 export class Gites {
   private idGite: number;
-  private idAdmin;
+  private idAdmin: Admins;
   private nom: string;
   private adresse1: string;
   private adresse2: string;
   private description: string;
   
-  constructor(idGite,idAdmin,nom,adresse1,adresse2,description) {
+  constructor(idGite?,admin?,nom?,adresse1?,adresse2?,description?) {
     this.idGite = idGite;
-    this.idAdmin = new Admins(idAdmin);
+    this.idAdmin = new Admins(admin);
     this.nom = nom;
     this.adresse1 = adresse1;
     this.adresse2 = adresse2;

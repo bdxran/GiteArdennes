@@ -25,4 +25,8 @@ public class AdminsService {
 	public List<Admins> findAll(){
 		return adminsRepository.findAll();
 	}
+	
+	public Integer getIdAdmin(String username){
+		return adminsRepository.getIdAdmin(username);
+	}
 }

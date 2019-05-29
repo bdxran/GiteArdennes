@@ -23,6 +23,11 @@ public class AdminsController {
 		return adminsService.findAll();
 	}
 	
+	@GetMapping("/login")
+	public @ResponseBody Integer getIdAdmin(String username) {
+		return adminsService.getIdAdmin(username);
+	}
+	
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<Admins> newAdmin (@RequestBody Admins admin) {
 		if(admin == null) {

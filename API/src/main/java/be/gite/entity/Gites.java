@@ -1,5 +1,8 @@
 package be.gite.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,6 +25,9 @@ public class Gites {
 	private String adresse2;
 	@Column(name="description", nullable=false)
 	private String description;
+	
+	@OneToMany(mappedBy = "idGite")
+	private Set<Photos> photos = new HashSet<>();
 	
 	public Gites() {
 		super();

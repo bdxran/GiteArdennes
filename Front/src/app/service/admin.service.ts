@@ -23,5 +23,9 @@ export class AdminService {
 
   public executeDataAdminService(){
     return this.http.get(`${API_URL}/admins`);
- }
+  }
+
+  public getIdAdmin(username: string) {
+    return this.http.get(`${API_URL}/admins/login`,{params: {username}});
+  }
 }

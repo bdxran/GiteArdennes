@@ -27,7 +27,9 @@ export class SignupComponent implements OnInit {
   public basicInscrip() {
     if(this.password == this.confirmPassword) {
       this.invalidPassword = false;
+
       this.admin = new Admins(0,this.username,this.password);
+      
       this.basicInscript.exeInscripServ(this.admin).subscribe(
         data => { 
           console.log(data);

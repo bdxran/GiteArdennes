@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GiteService, Gites } from '../service/gite.service';
+import { GiteService } from '../service/gite.service';
+import { PhotoService } from '../service/photo.service';
 
 @Component({
   selector: 'app-gite',
@@ -8,18 +9,40 @@ import { GiteService, Gites } from '../service/gite.service';
 })
 export class GiteComponent implements OnInit {
 
-  gite:Gites[];
+  gite;
+  photo;
+  src;
 
-  constructor(private giteService: GiteService) { }
+  constructor(private giteService: GiteService,
+    private photoService: PhotoService) { }
 
   ngOnInit() {
     this.giteService.executeDataGiteService().subscribe(
-      giteReponse => this.handleSuccessFulGiteResponse(giteReponse)
+      giteReponse => {
+        this.gite = giteReponse;
+
+        this.photoService.executeDataPhotoService().subscribe(
+          photoReponse => {
+            this.photo = photoReponse;
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      },
+      error => {
+        console.log(error);
+      }
     );
   }
 
-  handleSuccessFulGiteResponse(giteReponse){
-    this.gite = giteReponse._embedded.gitesResources;
+  photoSrc(id:number) {
+    for(let photos of this.photo) {
+      if(Object.getOwnPropertyDescriptor(photos, 'idgite').value == id) {
+        this.src = Object.getOwnPropertyDescriptor(photos, 'lien').value;
+      }
+    }
+    return this.src;
   }
 
 }
