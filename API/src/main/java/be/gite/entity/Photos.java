@@ -3,21 +3,18 @@ package be.gite.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Photos")
+@Table(name = "Photos")
 public class Photos {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="idPhoto")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idPhoto", unique = true, updatable = false, nullable = false)
 	private Integer idPhoto;
-	
-	@ManyToOne
-	@JoinColumn(name="idGite")
-	private Gites idGite;
-	
-	@Column(name="lien", nullable=false)
+	@Column(name = "idGite", updatable = true, nullable = false)
+	private Integer idGite;
+	@Column(name = "lien", unique = true, insertable = true, updatable = true, nullable = false)
 	private String lien;
-	
+
 	public Photos() {
 		super();
 	}
@@ -30,11 +27,11 @@ public class Photos {
 		this.idPhoto = idPhoto;
 	}
 
-	public Gites getIdGite() {
+	public Integer getIdGite() {
 		return idGite;
 	}
 
-	public void setIdGite(Gites idGite) {
+	public void setIdGite(Integer idGite) {
 		this.idGite = idGite;
 	}
 
@@ -50,5 +47,5 @@ public class Photos {
 	public String toString() {
 		return "Photos [idPhoto=" + idPhoto + ", idGite=" + idGite + ", lien=" + lien + "]";
 	}
-	
+
 }

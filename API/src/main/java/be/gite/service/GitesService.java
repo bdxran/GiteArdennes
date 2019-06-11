@@ -2,27 +2,18 @@ package be.gite.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import be.gite.entity.Gites;
-import be.gite.repository.GitesRepository;
 
-@Service
-public class GitesService {
+public interface GitesService {
 
-	@Autowired
-	private GitesRepository gitesRepository;
+	List<Gites> findAll();
 	
-	public Gites create(Gites gite) {
-		return gitesRepository.save(gite);
-	}
+	Gites getGitesById(Integer id);
 	
-	public Boolean exist(Gites gite) {
-		return gitesRepository.existsById(gite.getIdGite());
-	}
-	
-	public List<Gites> findAll(){
-		return gitesRepository.findAll();
-	}
+	Integer getIdGites(String nom);
+
+	Gites create(Gites gite);
+
+	Boolean exist(Gites gite);
+
 }

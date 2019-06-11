@@ -1,47 +1,46 @@
 package be.gite.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import be.gite.entity.Photos;
 import be.gite.service.PhotosService;
 
 @RestController
-@RequestMapping(path="/photos")
+@RequestMapping(path = "/photos")
 public class PhotosController {
 
-private static final Logger logger = LoggerFactory.getLogger(Photos.class);
-	
 	@Autowired
-	private PhotosService photosService;
-	
+	private PhotosService service;
+
 	@GetMapping
-	public @ResponseBody Iterable<Photos> getAllPhotos() {
-		return photosService.findAll();
+	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseBody
+	public Iterable<Photos> getPhotos() {
+		return service.findAll();
 	}
-	
+
+	@GetMapping(value = "{id}")
+	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseBody
+	public Photos getPhotosById(@PathVariable Integer id) {
+		return service.getPhotosById(id);
+	}
+
+	@GetMapping(value = "/idGite/{id}")
+	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseBody
+	public List<Photos> getPhotosByIdGite(@PathVariable Integer id) {
+		return service.getPhotosByIdGite(id);
+	}
+
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<Photos> newGite (@RequestBody Photos photo) {
-		if(photo == null) {
-			logger.info("Gite is null, itsn't recording",photo);
-			return new ResponseEntity<Photos>(HttpStatus.NOT_FOUND);
-		} else if(photosService.exist(photo)) {
-			logger.info("Gite is exist, itsn't recording",photo);
-			return new ResponseEntity<Photos>(HttpStatus.CONFLICT);
-		} else {
-			System.out.println(photo);
-			photosService.create(photo);
-			logger.info("Gite is recording",photo);
-			return new ResponseEntity<Photos>(photo,HttpStatus.CREATED);
-		}	
+	@ResponseStatus(HttpStatus.CREATED)
+	@ResponseBody
+	public Photos newGite(@RequestBody Photos photo) {
+		return service.create(photo);
 	}
 }
