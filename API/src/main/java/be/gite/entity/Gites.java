@@ -1,5 +1,8 @@
 package be.gite.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +14,10 @@ public class Gites {
 	@Column(name = "idGite", unique = true, updatable = false, nullable = false)
 	private Integer idGite; // Primary Key
 
-	@Column(name = "idAdmin", updatable = true, nullable = false)
-	private Integer idAdmin;
+	@ManyToOne
+	@JoinColumn(name = "idAdmin", updatable = true, nullable = false)
+	private Admins idAdmin;
+
 	@Column(name = "nom", unique = true, updatable = true, nullable = false)
 	private String nom;
 	@Column(name = "adresse1", updatable = true, nullable = false)
@@ -21,6 +26,9 @@ public class Gites {
 	private String adresse2;
 	@Column(name = "description", updatable = true, nullable = false)
 	private String description;
+
+	@OneToMany(mappedBy = "idGite")
+	private Set<Gites> gite = new HashSet<>();
 
 	public Gites() {
 		super();
@@ -34,11 +42,11 @@ public class Gites {
 		this.idGite = idGite;
 	}
 
-	public Integer getIdAdmin() {
+	public Admins getIdAdmin() {
 		return idAdmin;
 	}
 
-	public void setIdAdmin(Integer idAdmin) {
+	public void setIdAdmin(Admins idAdmin) {
 		this.idAdmin = idAdmin;
 	}
 
@@ -76,7 +84,7 @@ public class Gites {
 
 	@Override
 	public String toString() {
-		return "Gite [idGite=" + idGite + ", idAdmin=" + idAdmin + ", nom=" + nom + ", adresse1=" + adresse1
+		return "Gites [idGite=" + idGite + ", idAdmin=" + idAdmin + ", nom=" + nom + ", adresse1=" + adresse1
 				+ ", adresse2=" + adresse2 + ", description=" + description + "]";
 	}
 

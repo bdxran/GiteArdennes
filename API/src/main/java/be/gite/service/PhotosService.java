@@ -1,6 +1,8 @@
 package be.gite.service;
 
 import java.util.List;
+
+import be.gite.entity.Gites;
 import be.gite.entity.Photos;
 
 public interface PhotosService {
@@ -13,5 +15,5 @@ public interface PhotosService {
 
 	Photos getPhotosById(Integer id);
 
-	List<Photos> getPhotosByIdGite(Integer idGite);
+	List<Photos> getPhotosByIdGite(Gites idGite);
 }

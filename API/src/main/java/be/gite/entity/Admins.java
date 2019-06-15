@@ -1,5 +1,8 @@
 package be.gite.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 import be.gite.tool.PasswordTool;
 
@@ -11,10 +14,14 @@ public class Admins {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idAdmin", unique = true, updatable = false, nullable = false)
 	private Integer idAdmin;
+	
 	@Column(name = "login", unique = true, updatable = false, nullable = false)
 	private String login;
 	@Column(name = "mdp", updatable = true, nullable = false)
 	private String mdp;
+
+	@OneToMany(mappedBy = "idAdmin")
+	private Set<Admins> admin = new HashSet<>();
 
 	public Admins() {
 		super();

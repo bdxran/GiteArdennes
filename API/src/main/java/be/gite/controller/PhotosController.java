@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import be.gite.entity.Gites;
 import be.gite.entity.Photos;
 import be.gite.service.PhotosService;
 
@@ -30,10 +31,10 @@ public class PhotosController {
 		return service.getPhotosById(id);
 	}
 
-	@GetMapping(value = "/idGite/{id}")
+	@PostMapping(value = "/idGite/{id}", consumes = "application/json")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
-	public List<Photos> getPhotosByIdGite(@PathVariable Integer id) {
+	public List<Photos> getPhotosByIdGite(@PathVariable Gites id) {
 		return service.getPhotosByIdGite(id);
 	}
 

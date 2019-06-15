@@ -1,16 +1,23 @@
 package be.gite.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Publiques")
 public class Publiques {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idPublique", unique = true, updatable = false, nullable = false)
 	private Integer idPublique;
-	@Column(name = "codePostal", updatable = true, nullable = false)
-	private String codePostal;
+
+	@ManyToOne
+	@JoinColumn(name = "idVille", updatable = true, nullable = false)
+	private Villes idVille;
+
 	@Column(name = "nom", updatable = false, nullable = false)
 	private String nom;
 	@Column(name = "prenom", updatable = false, nullable = false)
@@ -31,6 +38,9 @@ public class Publiques {
 	private String numCompte;
 	@Column(name = "blacklist", updatable = true, nullable = false)
 	private boolean blacklist;
+	
+	@OneToMany(mappedBy = "idPublique")
+	private Set<Publiques> publique = new HashSet<>();
 
 	public Publiques() {
 		super();
@@ -44,12 +54,12 @@ public class Publiques {
 		this.idPublique = idPublique;
 	}
 
-	public String getCodePostal() {
-		return codePostal;
+	public Villes getIdVille() {
+		return idVille;
 	}
 
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
+	public void setIdVille(Villes idVille) {
+		this.idVille = idVille;
 	}
 
 	public String getNom() {
@@ -134,7 +144,7 @@ public class Publiques {
 
 	@Override
 	public String toString() {
-		return "Publiques [idPublique=" + idPublique + ", codePostal=" + codePostal + ", nom=" + nom + ", prenom=" + prenom
+		return "Publiques [idPublique=" + idPublique + ", idVille=" + idVille + ", nom=" + nom + ", prenom=" + prenom
 				+ ", mdp=" + mdp + ", adresse1=" + adresse1 + ", adresse2=" + adresse2 + ", adresse3=" + adresse3
 				+ ", telephone=" + telephone + ", email=" + email + ", numCompte=" + numCompte + ", blacklist="
 				+ blacklist + "]";

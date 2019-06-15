@@ -10,8 +10,11 @@ public class Photos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idPhoto", unique = true, updatable = false, nullable = false)
 	private Integer idPhoto;
-	@Column(name = "idGite", updatable = true, nullable = false)
-	private Integer idGite;
+	
+	@ManyToOne
+	@JoinColumn(name = "idGite", updatable = true, nullable = false)
+	private Gites idGite;
+	
 	@Column(name = "lien", unique = true, insertable = true, updatable = true, nullable = false)
 	private String lien;
 
@@ -27,11 +30,11 @@ public class Photos {
 		this.idPhoto = idPhoto;
 	}
 
-	public Integer getIdGite() {
+	public Gites getIdGite() {
 		return idGite;
 	}
 
-	public void setIdGite(Integer idGite) {
+	public void setIdGite(Gites idGite) {
 		this.idGite = idGite;
 	}
 

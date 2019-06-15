@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import be.gite.entity.Gites;
 import be.gite.entity.Photos;
 import be.gite.repository.PhotosRepository;
 
@@ -22,7 +23,7 @@ public class PhotosServiceImpl implements PhotosService {
 		return repository.findById(id).get();
 	}
 
-	public List<Photos> getPhotosByIdGite(Integer idGite) {
+	public List<Photos> getPhotosByIdGite(Gites idGite) {
 		return repository.getByIdGite(idGite);
 	}
 
