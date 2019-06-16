@@ -34,4 +34,8 @@ public class PhotosServiceImpl implements PhotosService {
 	public Boolean exist(Photos photo) {
 		return repository.existsById(photo.getIdPhoto());
 	}
+	
+	public void deletePhoto(Integer id) {
+		repository.deleteById(id);;
+	}
 }

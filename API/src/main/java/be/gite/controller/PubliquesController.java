@@ -52,4 +52,11 @@ public class PubliquesController {
 	public Publiques newPublique(@RequestBody Publiques publique) {
 		return service.newPublique(publique);
 	}
+	
+	@PutMapping(consumes = "application/json")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public Publiques updatePublique(@RequestBody Publiques publique) {
+		return service.newPublique(publique);
+	}
 }

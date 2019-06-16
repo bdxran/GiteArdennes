@@ -20,4 +20,6 @@ public interface ReservationsService {
 	List<Reservations> getReservationsByIdAdmin(Admins idAdmin);
 
 	Reservations newReservation(Reservations reservation);
+	
+	void deleteReservation(Integer id);
 }

@@ -11,4 +11,6 @@ public interface SaisonsService {
 	Saisons getSaisonByName(String nom);
 
 	Saisons newSaison(Saisons saison);
+	
+	void deleteSaison(Integer id);
 }

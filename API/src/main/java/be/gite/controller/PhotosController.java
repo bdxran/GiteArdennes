@@ -41,7 +41,21 @@ public class PhotosController {
 	@PostMapping(consumes = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
-	public Photos newGite(@RequestBody Photos photo) {
+	public Photos newPhoto(@RequestBody Photos photo) {
 		return service.create(photo);
+	}
+	
+	@PutMapping(consumes = "application/json")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	@ResponseBody
+	public Photos updatePhoto(@RequestBody Photos photo) {
+		return service.create(photo);
+	}
+	
+	@DeleteMapping(value = "{id}", consumes = "application/json")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public void deletePhoto(@PathVariable Integer id) {
+		service.deletePhoto(id);
 	}
 }

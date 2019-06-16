@@ -40,4 +40,8 @@ public class ReservationsServiceImpl implements ReservationsService {
 	public Reservations newReservation(Reservations reservation) {
 		return repository.save(reservation);
 	}
+	
+	public void deleteReservation(Integer id) {
+		repository.deleteById(id);;
+	}
 }

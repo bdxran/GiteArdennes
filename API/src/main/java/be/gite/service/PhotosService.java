@@ -16,4 +16,6 @@ public interface PhotosService {
 	Photos getPhotosById(Integer id);
 
 	List<Photos> getPhotosByIdGite(Gites idGite);
+	
+	void deletePhoto(Integer id);
 }

@@ -60,4 +60,18 @@ public class ReservationsController {
 	public Reservations newReservation(@RequestBody Reservations reservation) {
 		return service.newReservation(reservation);
 	}
+	
+	@PutMapping(consumes = "application/json")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	@ResponseBody
+	public Reservations updateReservation(@RequestBody Reservations reservation) {
+		return service.newReservation(reservation);
+	}
+	
+	@DeleteMapping(value = "{id}", consumes = "application/json")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public void deleteReservation(@PathVariable Integer id) {
+		service.deleteReservation(id);
+	}
 }

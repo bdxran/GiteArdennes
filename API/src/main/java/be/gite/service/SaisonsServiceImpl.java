@@ -27,4 +27,8 @@ public class SaisonsServiceImpl implements SaisonsService {
 	public Saisons newSaison(Saisons saison) {
 		return repository.save(saison);
 	}
+	
+	public void deleteSaison(Integer id) {
+		repository.deleteById(id);;
+	}
 }

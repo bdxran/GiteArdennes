@@ -16,4 +16,5 @@ public interface GitesService {
 
 	Boolean exist(Gites gite);
 
+	void deleteGite(Integer id);
 }

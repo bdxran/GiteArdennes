@@ -42,4 +42,11 @@ public class AdminsController {
 	public Admins newAdmin(@RequestBody Admins admin) {
 		return service.create(admin);
 	}
+	
+	@PutMapping(consumes = "application/json")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	@ResponseBody
+	public Admins updateAdmin(@RequestBody Admins admin) {
+		return service.create(admin);
+	}
 }

@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -46,6 +47,13 @@ public class PaysController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
 	public Pays newPays(@RequestBody Pays pays) {
+		return service.newPays(pays);
+	}
+	
+	@PutMapping(consumes = "application/json")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	@ResponseBody
+	public Pays updatePays(@RequestBody Pays pays) {
 		return service.newPays(pays);
 	}
 

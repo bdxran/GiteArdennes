@@ -32,4 +32,8 @@ public class GitesServiceImpl implements GitesService {
 	public Boolean exist(Gites gite) {
 		return repository.existsById(gite.getIdGite());
 	}
+	
+	public void deleteGite(Integer id) {
+		repository.deleteById(id);
+	}
 }

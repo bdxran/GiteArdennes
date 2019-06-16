@@ -12,33 +12,47 @@ import be.gite.service.GitesService;
 public class GitesController {
 
 	@Autowired
-	private GitesService gitesService;
+	private GitesService service;
 
 	@GetMapping
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public Iterable<Gites> getAllGites() {
-		return gitesService.findAll();
+		return service.findAll();
 	}
 	
-	@GetMapping(value = "{id}")
+	@GetMapping(value = "/id/{id}")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public Gites getGitesById(@PathVariable Integer id) {
-		return gitesService.getGitesById(id);
+		return service.getGitesById(id);
 	}
 	
 	@GetMapping(value = "/nom/{nom}")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public Integer getIdGites(@PathVariable String nom) {
-		return gitesService.getIdGites(nom);
+		return service.getIdGites(nom);
 	}
 
 	@PostMapping(consumes = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
 	public Gites newGite(@RequestBody Gites gite) {
-		return gitesService.create(gite);
+		return service.create(gite);
+	}
+	
+	@PutMapping(consumes = "application/json")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	@ResponseBody
+	public Gites updateGite(@RequestBody Gites gite) {
+		return service.create(gite);
+	}
+	
+	@DeleteMapping(value = "{id}")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public void deleteGite(@PathVariable Integer id) {
+		service.deleteGite(id);
 	}
 }
