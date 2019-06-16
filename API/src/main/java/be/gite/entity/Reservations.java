@@ -20,7 +20,7 @@ public class Reservations {
 	@JoinColumn(name = "idPublique", updatable = false, nullable = true)
 	private Publiques idPublique;
 	@ManyToOne
-	@JoinColumn(name = "idGite", updatable = false, nullable = true)
+	@JoinColumn(name = "idGite", updatable = false, nullable = false)
 	private Gites idGite;
 
 	@Column(name = "dateDebut", updatable = true, nullable = false)

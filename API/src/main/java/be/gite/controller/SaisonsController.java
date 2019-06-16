@@ -11,41 +11,41 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import be.gite.entity.Villes;
-import be.gite.service.VillesService;
+import be.gite.entity.Saisons;
+import be.gite.service.SaisonsService;
 
 @RestController
-@RequestMapping(path = "/villes")
-public class VillesController {
+@RequestMapping(path = "/saisons")
+public class SaisonsController {
 
 	@Autowired
-	private VillesService service;
+	private SaisonsService service;
 
 	@GetMapping
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
-	public Iterable<Villes> getVilles() {
-		return service.getVilles();
+	public Iterable<Saisons> getSaisons() {
+		return service.getSaisons();
 	}
 
 	@GetMapping(value = "/id/{id}")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
-	public Villes getVilleById(@PathVariable Integer id) {
-		return service.getVilleById(id);
+	public Saisons getSaisonById(@PathVariable Integer id) {
+		return service.getSaisonById(id);
 	}
 
-	@GetMapping(value = "{nom}")
+	@GetMapping(value = "/name/{nom}")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
-	public Villes getVilleByName(@PathVariable String nom) {
-		return service.getVilleByName(nom);
+	public Saisons getSaisonByName(@PathVariable String nom) {
+		return service.getSaisonByName(nom);
 	}
 
 	@PostMapping(consumes = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
-	public Villes newVille(@RequestBody Villes ville) {
-		return service.newVille(ville);
+	public Saisons newSaison(@RequestBody Saisons saison) {
+		return service.newSaison(saison);
 	}
 }

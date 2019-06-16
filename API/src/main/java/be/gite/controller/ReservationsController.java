@@ -33,28 +33,28 @@ public class ReservationsController {
 		return service.getReservationById(id);
 	}
 
-	@PostMapping(consumes = "applications/json", value = "/gite")
+	@PostMapping(value = "/gite", consumes = "application/json")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public List<Reservations> getReservationByIdGite(@RequestBody Gites idGite) {
 		return service.getReservationsByIdGite(idGite);
 	}
 
-	@PostMapping(consumes = "applications/json", value = "/publiques")
+	@PostMapping(value = "/publiques", consumes = "application/json")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public List<Reservations> getReservationByIdPublique(@RequestBody Publiques idPublique) {
 		return service.getReservationsByIdPublique(idPublique);
 	}
 
-	@PostMapping(consumes = "applications/json", value = "/admin")
+	@PostMapping(value = "/admin", consumes = "application/json")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public List<Reservations> getReservationByIdAdmin(@RequestBody Admins idAdmin) {
 		return service.getReservationsByIdAdmin(idAdmin);
 	}
 
-	@PostMapping(consumes = "applications/json")
+	@PostMapping(consumes = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
 	public Reservations newReservation(@RequestBody Reservations reservation) {
