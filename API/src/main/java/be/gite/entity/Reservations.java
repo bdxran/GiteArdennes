@@ -29,8 +29,14 @@ public class Reservations {
 	private Date dateFin;
 	@Column(name = "total", updatable = true, nullable = false)
 	private Float total;
+	@Column(name = "communication", updatable = false, nullable = false)
+	private String communication;
 	@Column(name = "statut", updatable = true, nullable = false)
 	private String statut;
+
+	public Reservations() {
+		super();
+	}
 
 	public Integer getIdReservation() {
 		return idReservation;
@@ -86,6 +92,14 @@ public class Reservations {
 
 	public void setTotal(Float total) {
 		this.total = total;
+	}
+
+	public String getCommunication() {
+		return communication;
+	}
+
+	public void setCommunication(String communication) {
+		this.communication = communication;
 	}
 
 	public String getStatut() {
