@@ -17,7 +17,7 @@ public class GitesController {
 	@GetMapping
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
-	public Iterable<Gites> getAllGites() {
+	public Iterable<Gites> getGites() {
 		return service.findAll();
 	}
 	

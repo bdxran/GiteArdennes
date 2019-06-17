@@ -52,7 +52,7 @@ public class PhotosController {
 		return service.create(photo);
 	}
 	
-	@DeleteMapping(value = "{id}", consumes = "application/json")
+	@DeleteMapping(value = "{id}")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public void deletePhoto(@PathVariable Integer id) {

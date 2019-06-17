@@ -40,7 +40,7 @@ public class ReservationsController {
 		return service.getReservationsByIdGite(idGite);
 	}
 
-	@PostMapping(value = "/publiques", consumes = "application/json")
+	@PostMapping(value = "/publique", consumes = "application/json")
 	@ResponseStatus(HttpStatus.FOUND)
 	@ResponseBody
 	public List<Reservations> getReservationByIdPublique(@RequestBody Publiques idPublique) {
@@ -68,7 +68,7 @@ public class ReservationsController {
 		return service.newReservation(reservation);
 	}
 	
-	@DeleteMapping(value = "{id}", consumes = "application/json")
+	@DeleteMapping(value = "{id}")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public void deleteReservation(@PathVariable Integer id) {

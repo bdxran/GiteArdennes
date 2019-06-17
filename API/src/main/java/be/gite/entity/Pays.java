@@ -14,7 +14,7 @@ public class Pays {
 	@Column(name = "code", unique = true, updatable = false, nullable = false)
 	private Integer code;
 
-	@Column(name = "nom", unique = true, updatable = false, nullable = false)
+	@Column(name = "nom", unique = true, updatable = true, nullable = false)
 	private String nom;
 
 	@OneToMany(mappedBy = "code")

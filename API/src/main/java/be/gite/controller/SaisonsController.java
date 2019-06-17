@@ -58,7 +58,7 @@ public class SaisonsController {
 		return service.newSaison(saison);
 	}
 	
-	@DeleteMapping(value = "{id}",consumes = "application/json")
+	@DeleteMapping(value = "{id}")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public void deleteSaison(@PathVariable Integer id) {
