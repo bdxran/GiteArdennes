@@ -23,21 +23,21 @@ public class PaysController {
 	private PaysService service;
 	
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Pays> getPays() {
 		return service.getPays();
 	}
 	
 	@GetMapping(value = "/id/{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Pays getPaysById(@PathVariable Integer id) {
 		return service.getPaysById(id);
 	}
 	
 	@GetMapping(value = "{nom}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Pays getPaysByName(@PathVariable String nom) {
 		return service.getPaysByName(nom);

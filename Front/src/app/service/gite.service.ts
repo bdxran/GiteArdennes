@@ -31,7 +31,7 @@ export class GiteService {
     private route: Router) { }
 
   public executeDataGiteService(){
-     return this.http.get(`${API_URL}/gites`);
+    return this.http.get(`${API_URL}/gites`);
   }
 
   public newGite(gite){
@@ -39,5 +39,5 @@ export class GiteService {
     return this.http.post<any>(
       `${API_URL}/gites`,gite);
     // this.route.navigate(['/administration']);
- }
+  }
 }

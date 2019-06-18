@@ -1,8 +1,7 @@
-<div class="vitrine">
-    <ul class="vitrineGite">
-      <li *ngFor="let git of gite" class="vitrine_li">
-        {{git.nom}}
-        <img [src]="photoSrc(git.idGite)" (click)=redirectGite(git.idgite) class="vitrine_img"/>
-      </li>
-    </ul>
-  </div>
+<app-header></app-header>
+<ul>
+  <li *ngFor="let git of this.gite">
+    {{git.nom}}
+  </li>
+</ul>>
+<app-footer></app-footer>

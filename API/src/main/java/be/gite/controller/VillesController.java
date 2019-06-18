@@ -23,21 +23,21 @@ public class VillesController {
 	private VillesService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Villes> getVilles() {
 		return service.getVilles();
 	}
 
 	@GetMapping(value = "/id/{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Villes getVilleById(@PathVariable Integer id) {
 		return service.getVilleById(id);
 	}
 
 	@GetMapping(value = "{nom}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Villes getVilleByName(@PathVariable String nom) {
 		return service.getVilleByName(nom);

@@ -15,21 +15,21 @@ public class GitesController {
 	private GitesService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Gites> getGites() {
 		return service.findAll();
 	}
 	
 	@GetMapping(value = "/id/{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Gites getGitesById(@PathVariable Integer id) {
 		return service.getGitesById(id);
 	}
 	
 	@GetMapping(value = "/nom/{nom}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Integer getIdGites(@PathVariable String nom) {
 		return service.getIdGites(nom);

@@ -24,21 +24,21 @@ public class SaisonsController {
 	private SaisonsService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Saisons> getSaisons() {
 		return service.getSaisons();
 	}
 
 	@GetMapping(value = "/id/{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Saisons getSaisonById(@PathVariable Integer id) {
 		return service.getSaisonById(id);
 	}
 
 	@GetMapping(value = "/name/{nom}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Saisons getSaisonByName(@PathVariable String nom) {
 		return service.getSaisonByName(nom);

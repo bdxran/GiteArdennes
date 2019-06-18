@@ -24,14 +24,14 @@ public class LogsController {
 	private LogsService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Logs> getLogs() {
 		return service.getLogs();
 	}
 	
 	@GetMapping(value = "{date}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Logs> getLogsByDate(@PathVariable Date date) {
 		return service.getLogsByDate(date);

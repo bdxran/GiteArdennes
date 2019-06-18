@@ -15,14 +15,14 @@ public class AdminsController {
 	private AdminsService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Admins> getAdmins() {
 		return service.findAll();
 	}
 
 	@GetMapping(value = "/login/{username}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Integer getIdAdmin(@PathVariable String username) {
 		System.out.println(username);
@@ -30,7 +30,7 @@ public class AdminsController {
 	}
 
 	@GetMapping(value = "{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Admins getAdminById(@PathVariable Integer id) {
 		return service.getAdminsById(id);

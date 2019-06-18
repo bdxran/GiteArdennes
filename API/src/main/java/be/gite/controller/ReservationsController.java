@@ -21,35 +21,35 @@ public class ReservationsController {
 	private ReservationsService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Reservations> getReservations() {
 		return service.getReservations();
 	}
 
 	@GetMapping(value = "/id/{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Reservations getReservationById(@PathVariable Integer id) {
 		return service.getReservationById(id);
 	}
 
 	@PostMapping(value = "/gite", consumes = "application/json")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Reservations> getReservationByIdGite(@RequestBody Gites idGite) {
 		return service.getReservationsByIdGite(idGite);
 	}
 
 	@PostMapping(value = "/publique", consumes = "application/json")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Reservations> getReservationByIdPublique(@RequestBody Publiques idPublique) {
 		return service.getReservationsByIdPublique(idPublique);
 	}
 
 	@PostMapping(value = "/admin", consumes = "application/json")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Reservations> getReservationByIdAdmin(@RequestBody Admins idAdmin) {
 		return service.getReservationsByIdAdmin(idAdmin);

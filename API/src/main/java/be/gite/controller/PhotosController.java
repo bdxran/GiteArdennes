@@ -18,21 +18,21 @@ public class PhotosController {
 	private PhotosService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Photos> getPhotos() {
 		return service.findAll();
 	}
 
 	@GetMapping(value = "{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Photos getPhotosById(@PathVariable Integer id) {
 		return service.getPhotosById(id);
 	}
 
 	@PostMapping(value = "/idGite/{id}", consumes = "application/json")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Photos> getPhotosByIdGite(@PathVariable Gites id) {
 		return service.getPhotosByIdGite(id);

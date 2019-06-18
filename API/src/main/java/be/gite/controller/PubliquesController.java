@@ -17,28 +17,28 @@ public class PubliquesController {
 	private PubliquesService service;
 
 	@GetMapping
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Iterable<Publiques> getPubliques() {
 		return service.getPubliques();
 	}
 
 	@GetMapping(value = "{id}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Publiques getPubliquesById(@PathVariable Integer id) {
 		return service.getPubliquesById(id);
 	}
 
 	@GetMapping(value = "/name/{nom}/{prenom}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Publiques> getPubliquesByName(@PathVariable String nom, @PathVariable String prenom) {
 		return service.getPubliquesByName(nom, prenom);
 	}
 
 	@GetMapping(value = "/id/{email}/{racine}")
-	@ResponseStatus(HttpStatus.FOUND)
+	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public Integer getIdPublique(@PathVariable String email, @PathVariable String racine) {
 		email = email.concat("."+racine);

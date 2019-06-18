@@ -16,6 +16,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { GiteComponent } from './gite/gite.component';
 import { NewGiteComponent } from './new-gite/new-gite.component';
+import { CallBackPipe } from './pipe/call-back.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NewGiteComponent } from './new-gite/new-gite.component';
     AdministrationComponent,
     GiteComponent,
     NewGiteComponent,
+    CallBackPipe,
   ],
   imports: [
     BrowserModule,
