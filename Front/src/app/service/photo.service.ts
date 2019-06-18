@@ -21,7 +21,12 @@ export class PhotoService {
 
   constructor(private http: HttpClient) { }
 
-  public executeDataPhotoService(id){
-    return this.http.get(`${API_URL}/photos`,id);
+  public executeDataPhotoService(id?){
+    if(id != null){
+      return this.http.get(`${API_URL}/photos/idGite/`+id);
+    } else {
+      return this.http.get(`${API_URL}/photos`);
+    }
+    
   }
 }

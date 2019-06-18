@@ -12,7 +12,7 @@ export class Gites {
   private adresse2: string;
   private description: string;
   
-  constructor(idGite?,admin?,nom?,adresse1?,adresse2?,description?) {
+  constructor(admin?,nom?,adresse1?,adresse2?,description?,idGite?) {
     this.idGite = idGite;
     this.idAdmin = new Admins(admin);
     this.nom = nom;
@@ -27,17 +27,27 @@ export class Gites {
 })
 export class GiteService {
 
-  constructor(private http: HttpClient,
-    private route: Router) { }
+  constructor(private http: HttpClient) { }
 
-  public executeDataGiteService(){
+  public getGites(){
     return this.http.get(`${API_URL}/gites`);
+  }
+
+  public getGiteById(id){
+    return this.http.get(`${API_URL}/gites/id/`+id);
+  }
+
+  public deleteGite(id){
+    return this.http.delete(`${API_URL}/gites/`+id);
   }
 
   public newGite(gite){
     gite=JSON.stringify(gite)
-    return this.http.post<any>(
-      `${API_URL}/gites`,gite);
-    // this.route.navigate(['/administration']);
+    return this.http.post<any>(`${API_URL}/gites`,gite);
+  }
+
+  public updateGite(gite){
+    gite=JSON.stringify(gite)
+    return this.http.put<any>(`${API_URL}/gites`,gite);
   }
 }

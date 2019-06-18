@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GiteService, Gites } from '../service/gite.service';
-import { BasicAuthentificateService } from '../service/basic-authentificate.service';
-import { AdminService } from '../service/admin.service';
+import { GiteService, Gites } from '../../service/gite.service';
+import { BasicAuthentificateService } from '../../service/basic-authentificate.service';
+import { AdminService } from '../../service/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-gite',
@@ -19,7 +20,8 @@ export class NewGiteComponent implements OnInit {
 
   constructor(private giteService: GiteService,
     private adminService: AdminService,
-    private basicAuthenticationService: BasicAuthentificateService
+    private basicAuthenticationService: BasicAuthentificateService,
+    private route: Router
     ) { }
 
   ngOnInit() {
@@ -32,13 +34,13 @@ export class NewGiteComponent implements OnInit {
     this.adminService.getIdAdmin(username).subscribe(
       adminReponse => {
         this.admin = adminReponse;
-        console.log(adminReponse);
 
         this.gite = new Gites(this.admin,this.nom,this.adresse1,this.adresse2,this.description);
 
         this.giteService.newGite(this.gite).subscribe(
           data => { 
             console.log(data);
+            this.route.navigate(['/gite']);
           },
           error => {
             console.log(error);

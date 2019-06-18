@@ -31,7 +31,7 @@ public class PhotosController {
 		return service.getPhotosById(id);
 	}
 
-	@PostMapping(value = "/idGite/{id}", consumes = "application/json")
+	@GetMapping(value = "/idGite/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Photos> getPhotosByIdGite(@PathVariable Gites id) {

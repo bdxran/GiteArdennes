@@ -14,9 +14,11 @@ import { HttpInterceptorBasicAuthService } from './service/http-interceptor-basi
 import { SignupComponent } from './signup/signup.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdministrationComponent } from './administration/administration.component';
-import { GiteComponent } from './gite/gite.component';
-import { NewGiteComponent } from './new-gite/new-gite.component';
+import { GiteComponent } from './Gites/gite/gite.component';
+import { NewGiteComponent } from './Gites/new-gite/new-gite.component';
 import { CallBackPipe } from './pipe/call-back.pipe';
+import { UpdateGiteComponent } from './Gites/update-gite/update-gite.component';
+import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { CallBackPipe } from './pipe/call-back.pipe';
     GiteComponent,
     NewGiteComponent,
     CallBackPipe,
+    UpdateGiteComponent,
+    ViewGiteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
   ],
   providers: [
     {
