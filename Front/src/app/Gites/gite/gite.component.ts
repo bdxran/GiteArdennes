@@ -23,27 +23,13 @@ export class GiteComponent implements OnInit {
     this.giteService.getGites().subscribe(
       giteReponse => {
         this.gite = giteReponse;
-
-        // this.photoService.executeDataPhotoService().subscribe(
-        //   photoReponse => {
-        //     this.photo = photoReponse;
-        //   }
-        // );
       }
     );
   }
 
-  // public getPhotoByIdGite(id) {
-  //   for(let ph of this.photo) {
-  //     if(ph.idGite == id) {
-  //       this.src = ph.lien;
-  //     }
-  //   }
-  // }
-
   public delete(id) {
     this.giteService.deleteGite(id).subscribe();
-    this.navigate("gite");
+    window.location.reload();
   }
 
   public navigate(direction,id?){

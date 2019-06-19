@@ -11,6 +11,7 @@ import { NewGiteComponent } from './Gites/new-gite/new-gite.component';
 import { RouteGuardService } from './service/route-guard.service';
 import { UpdateGiteComponent } from './Gites/update-gite/update-gite.component';
 import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
+import { ReserveGiteComponent } from './Reservation/reserve-gite/reserve-gite.component';
 
 const routes: Routes = [
   {path:"", component:WelcomeComponent, canActivate:[RouteGuardService]},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"addGite", component:NewGiteComponent, canActivate:[RouteGuardService]},
   {path:"updateGite/:id", component:UpdateGiteComponent, canActivate:[RouteGuardService]},
   {path:"viewGite/:id", component:ViewGiteComponent, canActivate:[RouteGuardService]},
+  {path:"reserveGite/:id", component:ReserveGiteComponent, canActivate:[RouteGuardService]},
   {path:"**", component:ErrorComponent},
 ];
 

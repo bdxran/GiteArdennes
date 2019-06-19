@@ -1,0 +1,32 @@
+<app-header></app-header>
+<form>
+  <p>
+    {{this.gite.nom}}
+  </p>
+  <ul>
+    <li *ngFor="let src of source"><img [src]="src.lien"></li>
+  </ul>
+  <p>
+    {{this.gite.adresse1}}
+  </p>
+  <p>
+    {{this.gite.adresse2}}
+  </p>
+  <p>
+    {{this.gite.description}}
+  </p>
+
+  <hr>
+    <label for="dateDebut">Date de début de réservation</label><br/>
+    <ngb-datepicker #dp name="modelDebut" [(ngModel)]='modelDebut' (navigate)="date = $event.next"></ngb-datepicker>
+  <hr/>
+  <hr>
+    <label for="dateFin">Date de fin de réservation</label><br/>
+    <ngb-datepicker #dp name="modelFin" [(ngModel)]='modelFin' (navigate)="date = $event.next"></ngb-datepicker>
+  <hr/>
+</form>
+
+<button (click)="reserve()">Réserver</button>
+<button (click)="navigate('gite')">Retour</button>
+
+<app-footer></app-footer>

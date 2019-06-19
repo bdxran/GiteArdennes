@@ -1,5 +1,7 @@
 <app-header></app-header>
-<p>
-  welcome works!
-</p>
+<ul class="list">
+  <li *ngFor="let git of this.gite" class="ligne_item">
+    <span class="item"><button (click)="navigate('reserveGite',git.idGite)">{{git.nom}}</button></span>
+  </li>
+</ul>
 <app-footer></app-footer>

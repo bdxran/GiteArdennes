@@ -19,6 +19,9 @@ import { NewGiteComponent } from './Gites/new-gite/new-gite.component';
 import { CallBackPipe } from './pipe/call-back.pipe';
 import { UpdateGiteComponent } from './Gites/update-gite/update-gite.component';
 import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
+import { ReserveGiteComponent } from './Reservation/reserve-gite/reserve-gite.component';
+import { HttpModule} from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
     CallBackPipe,
     UpdateGiteComponent,
     ViewGiteComponent,
+    ReserveGiteComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
+    HttpModule,
   ],
   providers: [
     {
@@ -54,3 +60,4 @@ import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class NgbdDatepickerBasicModule { }

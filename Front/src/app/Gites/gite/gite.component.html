@@ -7,9 +7,9 @@
       <span class="item_bis">Supprimer</span>
     </li>
     <li *ngFor="let git of this.gite" class="ligne_item">
-      <span class="item"><a (click)="navigate('viewGite',git.idGite)">{{git.nom}}</a></span>
-      <span class="item_bis"><a (click)="navigate('updateGite',git.idGite)">Update</a></span>
-      <span class="item_bis"><a (click)="delete(git.idGite)">Delete</a></span>
+      <span class="item"><button (click)="navigate('viewGite',git.idGite)">{{git.nom}}</button></span>
+      <span class="item_bis"><button (click)="navigate('updateGite',git.idGite)">Update</button></span>
+      <span class="item_bis"><button (click)="delete(git.idGite)">Delete</button></span>
     </li>
   </ul>
 </div>

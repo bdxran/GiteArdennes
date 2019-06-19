@@ -12,7 +12,7 @@ export class Gites {
   private adresse2: string;
   private description: string;
   
-  constructor(admin?,nom?,adresse1?,adresse2?,description?,idGite?) {
+  constructor(idGite?,admin?,nom?,adresse1?,adresse2?,description?) {
     this.idGite = idGite;
     this.idAdmin = new Admins(admin);
     this.nom = nom;

@@ -11,10 +11,10 @@ export class ViewGiteComponent implements OnInit {
 
   private id;
   private gite;
-  private nom: string;
-  private adresse1: string;
-  private adresse2: string;
-  private description: string;
+  private nom: string = "";
+  private adresse1: string = "";
+  private adresse2: string = "";
+  private description: string = "";
 
   constructor(private giteService: GiteService,
     private router: ActivatedRoute,

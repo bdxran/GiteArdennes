@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PhotoService } from '../service/photo.service';
+import { GiteService } from '../service/gite.service';
 
 @Component({
   selector: 'app-welcome',
@@ -7,10 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  private gite;
+
+  constructor(private giteService: GiteService,
+    private photoService: PhotoService,
+    private route: Router) { }
 
   ngOnInit() {
-    
+    this.giteService.getGites().subscribe(
+      giteReponse => {
+        this.gite = giteReponse;
+      }
+    );
+  }
+
+  public navigate(direction,id?){
+    if(id!=null) {
+      this.route.navigate([direction,id]);
+    } else {
+      this.route.navigate([direction]);
+    }
   }
 
 }
