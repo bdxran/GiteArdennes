@@ -10,3 +10,8 @@ form {
 label {
     float: left;
 }
+
+button {
+    float: left;
+    width: 50%;
+}

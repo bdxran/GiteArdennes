@@ -67,4 +67,8 @@ export class UpdateGiteComponent implements OnInit {
       }
     );
   }
+
+  public navigate(direction){
+    this.route.navigate([direction]);
+  }
 }

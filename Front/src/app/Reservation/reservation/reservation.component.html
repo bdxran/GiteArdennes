@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="list_gites">
+  <ul class="list">
+    <li class="ligne">
+      <span class="item">Index</span>
+      <span class="item_bis">Nom du gite</span>
+      <span class="item_bis">Date de début de location</span>
+      <span class="item_bis">Date de fin de location</span>
+      <span class="item_bis">Status</span>
+      <span class="item_bis">Supprimer</span>
+    </li>
+    <li *ngFor="let res of this.reservation; let i = index"class="ligne_item">
+      <span class="item">{{i}}</span>
+      <a class="item_bis" (click)="getNameGite(res.idGite.idGite)">{{this.nom}}</a>
+      <span class="item_bis">{{res.dateDebut}}</span>
+      <span class="item_bis">{{res.dateFin}}</span>
+      <span class="item_bis">
+        <select name="statut" id="statut" ng-model="statut" #statut (change)=update(res.idReservation,statut.value) value={{res.statut}}>
+          <option value="Reserved">Reserved</option>
+          <option value="Occuped">Occuped</option>
+        </select>
+      </span>
+      <span class="item_bis"><a (click)="delete(res.idReservation)">Delete</a></span>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

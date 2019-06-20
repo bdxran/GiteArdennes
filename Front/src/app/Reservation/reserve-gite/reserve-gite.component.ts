@@ -67,7 +67,7 @@ export class ReserveGiteComponent implements OnInit {
     let idGite = this.id;
     let dateDebut = this.parserFormatter.format(this.modelDebut);
     let datefin = this.parserFormatter.format(this.modelFin);
-    let statut = "reserver";
+    let statut = "Reserved";
     let total = 500;    //TO DO doit être auto générer suivant les dates et la saison
     let communication = "01-56459-21";    //TO DO doit être auto générer
     let username = this.basicAuthenticationService.getAuthenticatedUser();

@@ -14,5 +14,5 @@ public interface PubliquesRepository extends JpaRepository<Publiques, Integer>, 
 	List<Publiques> getPubliquesByName(@Param("nom") String nom, @Param("prenom") String prenom);
 
 	@Query("SELECT p.idPublique from Publiques p where p.email = :email")
-	Integer getIdPublique(@Param("email") String email);
+	Publiques getIdPublique(@Param("email") String email);
 }

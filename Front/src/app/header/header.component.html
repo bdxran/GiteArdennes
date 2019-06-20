@@ -17,9 +17,12 @@
                 aria-haspopup="true" aria-expanded="false">Utilisateur</a>
               <div *ngIf="this.username == null" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" routerLink="/signin">Sign in</a>
+                <a class="dropdown-item" routerLink="/createCompte">Sign up</a>
               </div>
               <div *ngIf="this.username != null" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <!-- <a class="dropdown-item" routerLink="/administration">Profil</a> TO DO -->
+                <a class="dropdown-item" routerLink="/user">View</a>
+                <a class="dropdown-item" routerLink="/signup">SignUp</a>
                 <a class="dropdown-item" routerLink="/logout">Logout</a>
               </div>
             </li>
@@ -31,6 +34,21 @@
                 <a class="dropdown-item" routerLink="/gite">Views</a>
                 <a class="dropdown-item" routerLink="/addGite">New Gite</a>
                 <!-- <a class="dropdown-item" routerLink="/reservation">Réservation</a> TO DO -->
+              </div>
+            </li>
+            <li *ngIf="this.username != null"  class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Reservations</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/reservation">Views</a>
+              </div>
+            </li>
+            <li *ngIf="this.username != null"  class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Administration</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/ville">Ville</a>
+                <a class="dropdown-item" routerLink="/pays">Pays</a>
               </div>
             </li>
           </ul>

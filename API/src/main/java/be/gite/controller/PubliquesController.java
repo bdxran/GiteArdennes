@@ -40,7 +40,7 @@ public class PubliquesController {
 	@GetMapping(value = "/id/{email}/{racine}")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Integer getIdPublique(@PathVariable String email, @PathVariable String racine) {
+	public Publiques getIdPublique(@PathVariable String email, @PathVariable String racine) {
 		email = email.concat("."+racine);
 		System.out.println(email);
 		return service.getIdPublique(email);

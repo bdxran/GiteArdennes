@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="list_gites">
+  <ul class="list">
+    <li class="ligne">
+      <span class="item">Pays</span>
+      <span class="item_bis">Modifer</span>
+      <span class="item_bis">Supprimer</span>
+    </li>
+    <li *ngFor="let pa of this.pays" class="ligne_item">
+      <span class="item">{{pa.nom}}</span>
+      <span class="item_bis"><button (click)="navigate('updatePays',pa.code)">Update</button></span>
+      <span class="item_bis"><button (click)="delete(pa.code)">Delete</button></span>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

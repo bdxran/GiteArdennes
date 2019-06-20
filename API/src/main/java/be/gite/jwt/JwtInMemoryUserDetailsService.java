@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Optional;
 
 import be.gite.entity.Admins;
+import be.gite.entity.Publiques;
 import be.gite.repository.AdminsRepository;
+import be.gite.repository.PubliquesRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +22,9 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
 
   @Autowired
   AdminsRepository adminsRepository;
+  
+  @Autowired
+  PubliquesRepository publiquesRepository;
 	
 	
   static List<JwtUserDetails> inMemoryUserList = new ArrayList<>();
@@ -32,11 +38,15 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
   public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
     
 	  Optional<Admins> stu = adminsRepository.adminByLogin(login).stream().findFirst();
+	  
+	  Publiques pub = publiquesRepository.getIdPublique(login);
 	    
 	  Optional<JwtUserDetails> user = Optional.empty();
 	  
 	  if(stu.isPresent()) {
 		  user = Optional.of(new JwtUserDetails(new Long(stu.get().getIdAdmin()),stu.get().getLogin(),stu.get().getMdp(),"USER_ADMIN")); 
+	  } else if(pub != null) {
+		  user = Optional.of(new JwtUserDetails(new Long(pub.getIdPublique()),pub.getEmail(),pub.getMdp(),"USER_CLIENT")); 
 	  }
 	  
 	  //Optional<JwtUserDetails> findFirst = inMemoryUserList.stream()

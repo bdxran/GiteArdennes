@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="list_gites">
+  <ul class="list">
+    <li class="ligne">
+      <span class="item">Client</span>
+      <span class="item_bis">Email</span>
+      <span class="item_bis">Adresse</span>
+      <span class="item_bis">Téléphone</span>
+      <span class="item_bis">Statut</span>
+    </li>
+    <li *ngFor="let us of this.user" class="ligne_item">
+      <span class="item"><a>{{us.nom}} {{us.prenom}}</a></span>
+      <span class="item_bis"><a>{{us.email}}</a></span>
+      <span class="item_bis">{{us.adresse1}}, {{us.adresse2}}, {{us.adresse3}}</span>
+      <span class="item_bis">{{us.telephone}}</span>
+      <span class="item_bis">
+        <select name="statut" id="statut" ng-model="statut" #statut (change)=update(us.idPublique,statut.value) value={{us.blacklist}}>
+          <option value="true">Blacklist</option>
+          <option value="false">Whitelist</option>
+        </select>
+      </span>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

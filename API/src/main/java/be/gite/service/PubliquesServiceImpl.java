@@ -26,7 +26,7 @@ public class PubliquesServiceImpl implements PubliquesService {
 		return repository.getPubliquesByName(nom, prenom);
 	}
 
-	public Integer getIdPublique(String email) {
+	public Publiques getIdPublique(String email) {
 		return repository.getIdPublique(email);
 	}
 

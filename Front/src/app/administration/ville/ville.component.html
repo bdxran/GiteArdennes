@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="list_gites">
+  <ul class="list">
+    <li class="ligne">
+      <span class="item">Ville</span>
+      <span class="item_bis">Modifer</span>
+      <span class="item_bis">Supprimer</span>
+    </li>
+    <li *ngFor="let vil of this.ville" class="ligne_item">
+      <span class="item">{{vil.nom}}</span>
+      <span class="item_bis"><button (click)="navigate('updateVille',vil.idVille)">Update</button></span>
+      <span class="item_bis"><button (click)="delete(vil.idVille)">Delete</button></span>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

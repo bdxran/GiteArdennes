@@ -1,0 +1,33 @@
+<app-header></app-header>
+<form class="text-center border border-light p-5">
+
+  <div class="card-header">
+    <h4 class="card-title mt-2">Créer un compte client</h4>
+  </div>
+
+  <label>Email</label>
+  <input name='username' type='text' [(ngModel)]='username' class="form-control mb-4">
+  <label>Créer mot de passe</label>
+  <input name='password' type='password' [(ngModel)]='password' class="form-control mb-4">
+  <label>Confirmer mot de passe</label>
+  <input name='password' type='password' [(ngModel)]='confirmPassword' class="form-control mb-4">
+  <label>Nom</label>
+  <input name='nom' type='text' [(ngModel)]='nom' class="form-control mb-4">
+  <label>Prenom</label>
+  <input name='prenom' type='text' [(ngModel)]='prenom' class="form-control mb-4">
+  <label>Rue</label>
+  <input name='adresse1' type='text' [(ngModel)]='adresse1' class="form-control mb-4">
+  <label>Code postal et ville</label>
+  <input name='adresse2' type='text' [(ngModel)]='adresse2' class="form-control mb-4">
+  <label>Pays</label>
+  <input name='adresse3' type='text' [(ngModel)]='adresse3' class="form-control mb-4">
+  <label>Téléphone</label>
+  <input name='telephone' type='text' [(ngModel)]='telephone' class="form-control mb-4">
+  <label>Numéro de compte</label>
+  <input name='numCompte' type='text' [(ngModel)]='numCompte' class="form-control mb-4">
+  
+  <button class="btn btn-info btn-block my-4" (click)="basicInscrip()">Sign up</button>
+  <div *ngIf='invalidPassword'>Erreur : Les mots de passe ne correspondent pas!</div>
+
+</form>
+<app-footer></app-footer>

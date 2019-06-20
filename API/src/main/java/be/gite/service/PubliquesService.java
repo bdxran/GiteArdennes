@@ -12,7 +12,7 @@ public interface PubliquesService {
 
 	List<Publiques> getPubliquesByName(String nom, String prenom);
 
-	Integer getIdPublique(String email);
+	Publiques getIdPublique(String email);
 
 	Publiques newPublique(Publiques publique);
 
