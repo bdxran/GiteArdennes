@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { API_URL } from '../app-constants';
+import { API_URL } from '../../app-constants';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Admins } from './admin.service';
@@ -12,9 +12,9 @@ export class Gites {
   private adresse2: string;
   private description: string;
   
-  constructor(idGite?,admin?,nom?,adresse1?,adresse2?,description?) {
+  constructor(idGite?,idAdmin?,nom?,adresse1?,adresse2?,description?) {
     this.idGite = idGite;
-    this.idAdmin = new Admins(admin);
+    this.idAdmin = idAdmin;
     this.nom = nom;
     this.adresse1 = adresse1;
     this.adresse2 = adresse2;
@@ -35,6 +35,10 @@ export class GiteService {
 
   public getGiteById(id){
     return this.http.get(`${API_URL}/gites/id/`+id);
+  }
+
+  public getGiteByName(name){
+    return this.http.get(`${API_URL}/gites/nom/`+name);
   }
 
   public deleteGite(id){

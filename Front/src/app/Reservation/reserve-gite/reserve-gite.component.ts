@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { GiteService, Gites } from 'src/app/service/gite.service';
+import { GiteService, Gites } from 'src/app/service/data/gite.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PhotoService } from 'src/app/service/photo.service';
+import { PhotoService } from 'src/app/service/data/photo.service';
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { BasicAuthentificateService } from 'src/app/service/basic-authentificate.service';
-import { ReservationService, ReservationsPublique, ReservationsAdmin } from 'src/app/service/reservation.service';
-import { AdminService, Admins } from 'src/app/service/admin.service';
-import { PubliqueService, Publiques } from 'src/app/service/publique.service';
+import { ReservationService, Reservations } from 'src/app/service/data/reservation.service';
+import { AdminService, Admins } from 'src/app/service/data/admin.service';
+import { PubliqueService, Publiques } from 'src/app/service/data/publique.service';
 
 @Component({
   selector: 'app-reserve-gite',
@@ -64,7 +64,7 @@ export class ReserveGiteComponent implements OnInit {
   }
 
   public reserve(){
-    let idGite = this.id;
+    let idGite = new Gites(this.id);
     let dateDebut = this.parserFormatter.format(this.modelDebut);
     let datefin = this.parserFormatter.format(this.modelFin);
     let statut = "Reserved";
@@ -76,7 +76,9 @@ export class ReserveGiteComponent implements OnInit {
       publiqueReponse => {
         let idPublique = publiqueReponse;
 
-        let reservation = new ReservationsPublique(idPublique,idGite,dateDebut,datefin,communication,statut,total);
+        idPublique = new Publiques(idPublique);
+
+        let reservation = new Reservations("",idPublique,"",idGite,dateDebut,datefin,communication,statut,total);
 
         this.reservationService.newReservation(reservation).subscribe(
           reservationReponse => {
@@ -89,8 +91,10 @@ export class ReserveGiteComponent implements OnInit {
         this.adminService.getIdAdmin(username).subscribe(
           adminReponse => {
             let idAdmin = adminReponse;
+
+            idAdmin = new Admins(idAdmin);
     
-            let reservation = new ReservationsAdmin(idAdmin,idGite,dateDebut,datefin,communication,statut,total);
+            let reservation = new Reservations("","",idAdmin,idGite,dateDebut,datefin,communication,statut,total);
     
             this.reservationService.newReservation(reservation).subscribe(
               reservationReponse => {

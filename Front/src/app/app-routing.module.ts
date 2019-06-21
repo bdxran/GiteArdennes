@@ -7,7 +7,7 @@ import { SignupComponent } from './Compte/signup/signup.component';
 import { LogoutComponent } from './Compte/logout/logout.component';
 import { GiteComponent } from './Gites/gite/gite.component';
 import { NewGiteComponent } from './Gites/new-gite/new-gite.component';
-import { RouteGuardService } from './service/route-guard.service';
+import { RouteGuardService } from './service/data/route-guard.service';
 import { UpdateGiteComponent } from './Gites/update-gite/update-gite.component';
 import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
 import { ReserveGiteComponent } from './Reservation/reserve-gite/reserve-gite.component';
@@ -16,6 +16,14 @@ import { CreateCompteComponent } from './Compte/create-compte/create-compte.comp
 import { UserComponent } from './Compte/user/user.component';
 import { VilleComponent } from './administration/ville/ville.component';
 import { PaysComponent } from './administration/pays/pays.component';
+import { UpdateVilleComponent } from './administration/update-ville/update-ville.component';
+import { UpdatePaysComponent } from './administration/update-pays/update-pays.component';
+import { NewVilleComponent } from './administration/new-ville/new-ville.component';
+import { NewPaysComponent } from './administration/new-pays/new-pays.component';
+import { SaisonComponent } from './administration/saison/saison.component';
+import { NewSaisonComponent } from './administration/new-saison/new-saison.component';
+import { UpdateSaisonComponent } from './administration/update-saison/update-saison.component';
+import { LogComponent } from './administration/log/log.component';
 
 const routes: Routes = [
   {path:"", component:WelcomeComponent},
@@ -33,7 +41,15 @@ const routes: Routes = [
   {path:"reserveGite/:id", component:ReserveGiteComponent, canActivate:[RouteGuardService]},
   {path:"user", component:UserComponent, canActivate:[RouteGuardService]},
   {path:"ville", component:VilleComponent, canActivate:[RouteGuardService]},
+  {path:"newVille", component:NewVilleComponent, canActivate:[RouteGuardService]},
+  {path:"updateVille/:id", component:UpdateVilleComponent, canActivate:[RouteGuardService]},
   {path:"pays", component:PaysComponent, canActivate:[RouteGuardService]},
+  {path:"newPays", component:NewPaysComponent, canActivate:[RouteGuardService]},
+  {path:"updatePays/:id", component:UpdatePaysComponent, canActivate:[RouteGuardService]},
+  {path:"saison", component:SaisonComponent, canActivate:[RouteGuardService]},
+  {path:"newSaison", component:NewSaisonComponent, canActivate:[RouteGuardService]},
+  {path:"updateSaison/:id", component:UpdateSaisonComponent, canActivate:[RouteGuardService]},
+  {path:"log", component:LogComponent, canActivate:[RouteGuardService]},
   {path:"**", component:ErrorComponent},
 ];
 

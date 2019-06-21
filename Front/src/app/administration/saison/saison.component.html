@@ -1,0 +1,25 @@
+<app-header></app-header>
+<a (click)="navigate('newSaison')">Ajouter une saison</a>
+<div class="list_gites">
+  <ul class="list">
+    <li class="ligne">
+      <span class="item">Saison</span>
+      <span class="item_bis">Gite</span>
+      <span class="item_bis">Date de début</span>
+      <span class="item_bis">Date de fin</span>
+      <span class="item_bis">Tarif</span>
+      <span class="item_bis">Modifer</span>
+      <span class="item_bis">Supprimer</span>
+    </li>
+    <li *ngFor="let sais of this.saison" class="ligne_item">
+      <span class="item">{{sais.nom}}</span>
+      <span class="item_bis">{{sais.idGite.nom}}</span>
+      <span class="item_bis">{{sais.dateDebut}}</span>
+      <span class="item_bis">{{sais.dateFin}}</span>
+      <span class="item_bis">{{sais.tarif}}</span>
+      <span class="item_bis"><a (click)="navigate('updateSaison',sais.idSaison)">Update</a></span>
+      <span class="item_bis"><a (click)="delete(sais.idSaison)">Delete</a></span>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

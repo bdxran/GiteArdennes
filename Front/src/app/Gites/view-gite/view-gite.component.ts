@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GiteService } from 'src/app/service/gite.service';
+import { GiteService } from 'src/app/service/data/gite.service';
 
 @Component({
   selector: 'app-view-gite',

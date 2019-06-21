@@ -1,0 +1,27 @@
+<app-header></app-header>
+<form class="text-center border border-light p-5">
+
+  <div class="card-header">
+      <h4 class="card-title mt-2">Modifier une saison</h4>
+  </div>
+
+  <label>Nom de la saison</label>
+  <input name='nom' type='text' [(ngModel)]='this.saison.nom' class="form-control mb-4">
+  <label>Nom du gite</label>
+  <input name='nomGite' type='text' [(ngModel)]='this.saison.idGite.nom' class="form-control mb-4">
+  <label>Tarif</label>
+  <input name='tarif' type='text' [(ngModel)]='this.saison.tarif' class="form-control mb-4">
+  <hr>
+    <label for="dateDebut">Date de début de la saison</label><br/>
+    <ngb-datepicker #dp name="modelDebut" [(ngModel)]='modelDebut' (navigate)="date = $event.next"></ngb-datepicker>
+  <hr/>
+  <hr>
+    <label for="dateFin">Date de fin de la saison</label><br/>
+    <ngb-datepicker #dp name="modelFin" [(ngModel)]='modelFin' (navigate)="date = $event.next"></ngb-datepicker>
+  <hr/>
+
+  <button class="btn btn-info btn-block my-4" (click)="updateSaison()">Valider</button>
+  <button class="btn btn-info btn-block my-4" (click)="navigate('saison')">Retour</button>
+
+</form>
+<app-footer></app-footer>

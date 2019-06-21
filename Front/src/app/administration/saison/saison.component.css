@@ -25,11 +25,11 @@
 
 .item {
     float: left;
-    width: 50%;
+    width: 22%;
 }
 
 .item_bis {
     float: left;
-    width: 50%;
+    width: 13%;
     border-left: 1px solid black;
 }

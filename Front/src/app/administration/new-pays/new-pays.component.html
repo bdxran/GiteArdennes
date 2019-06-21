@@ -1,0 +1,15 @@
+<app-header></app-header>
+<form class="text-center border border-light p-5">
+
+  <div class="card-header">
+      <h4 class="card-title mt-2">Ajouter un pays</h4>
+  </div>
+
+  <label>Nom du pays</label>
+  <input name='nom' type='text' [(ngModel)]='nom' class="form-control mb-4">
+
+  <button class="btn btn-info btn-block my-4" (click)="newPays()">Valider</button>
+  <button class="btn btn-info btn-block my-4" (click)="navigate('pays')">Retour</button>
+
+</form>
+<app-footer></app-footer>

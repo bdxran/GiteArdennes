@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PubliqueService, Publiques } from 'src/app/service/publique.service';
+import { PubliqueService, Publiques } from 'src/app/service/data/publique.service';
 import { Router } from '@angular/router';
 
 @Component({

@@ -26,7 +26,14 @@ import { CreateCompteComponent } from './Compte/create-compte/create-compte.comp
 import { UserComponent } from './Compte/user/user.component';
 import { VilleComponent } from './administration/ville/ville.component';
 import { PaysComponent } from './administration/pays/pays.component';
-
+import { UpdateVilleComponent } from './administration/update-ville/update-ville.component';
+import { UpdatePaysComponent } from './administration/update-pays/update-pays.component';
+import { NewVilleComponent } from './administration/new-ville/new-ville.component';
+import { NewPaysComponent } from './administration/new-pays/new-pays.component';
+import { SaisonComponent } from './administration/saison/saison.component';
+import { UpdateSaisonComponent } from './administration/update-saison/update-saison.component';
+import { NewSaisonComponent } from './administration/new-saison/new-saison.component';
+import { LogComponent } from './administration/log/log.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +56,14 @@ import { PaysComponent } from './administration/pays/pays.component';
     UserComponent,
     VilleComponent,
     PaysComponent,
+    UpdateVilleComponent,
+    UpdatePaysComponent,
+    NewVilleComponent,
+    NewPaysComponent,
+    SaisonComponent,
+    UpdateSaisonComponent,
+    NewSaisonComponent,
+    LogComponent,
   ],
   imports: [
     BrowserModule,

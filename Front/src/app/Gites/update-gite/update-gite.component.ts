@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BasicAuthentificateService } from '../../service/basic-authentificate.service';
-import { AdminService } from '../../service/admin.service';
-import { GiteService, Gites } from '../../service/gite.service';
+import { AdminService, Admins } from '../../service/data/admin.service';
+import { GiteService, Gites } from '../../service/data/gite.service';
 
 @Component({
   selector: 'app-update-gite',
@@ -53,7 +53,9 @@ export class UpdateGiteComponent implements OnInit {
       adminReponse => {
         this.admin = adminReponse;
 
-        this.gite = new Gites(this.admin,this.nom,this.adresse1,this.adresse2,this.description,this.id);
+        this.admin = new Admins(this.admin.idAdmin);
+
+        this.gite = new Gites(this.id,this.admin,this.nom,this.adresse1,this.adresse2,this.description);
 
         this.giteService.updateGite(this.gite).subscribe(
           data => { 

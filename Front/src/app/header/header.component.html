@@ -9,9 +9,6 @@
             <li class="nav-item active">
               <a class="nav-link" routerLink="/welcome">Acceuil<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link" routerLink="/contact">Contact</a> TO DO -->
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Utilisateur</a>
@@ -20,42 +17,28 @@
                 <a class="dropdown-item" routerLink="/createCompte">Sign up</a>
               </div>
               <div *ngIf="this.username != null" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <!-- <a class="dropdown-item" routerLink="/administration">Profil</a> TO DO -->
                 <a class="dropdown-item" routerLink="/user">View</a>
                 <a class="dropdown-item" routerLink="/signup">SignUp</a>
                 <a class="dropdown-item" routerLink="/logout">Logout</a>
               </div>
             </li>
-            <li *ngIf="this.username != null"  class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Gites</a>
-              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <!-- <a class="dropdown-item" routerLink="/signup">Ajouter un utilisateur</a> TO DO -->
-                <a class="dropdown-item" routerLink="/gite">Views</a>
-                <a class="dropdown-item" routerLink="/addGite">New Gite</a>
-                <!-- <a class="dropdown-item" routerLink="/reservation">Réservation</a> TO DO -->
-              </div>
+            <li *ngIf="this.username != null" class="nav-item active">
+              <a class="nav-link" routerLink="/gite">Gites<span class="sr-only">(current)</span></a>
             </li>
-            <li *ngIf="this.username != null"  class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Reservations</a>
-              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" routerLink="/reservation">Views</a>
-              </div>
+            <li *ngIf="this.username != null" class="nav-item active">
+              <a class="nav-link" routerLink="/reservation">Reservations<span class="sr-only">(current)</span></a>
             </li>
             <li *ngIf="this.username != null"  class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Administration</a>
               <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" routerLink="/ville">Ville</a>
+                <a class="dropdown-item" routerLink="/ville">Villes</a>
                 <a class="dropdown-item" routerLink="/pays">Pays</a>
+                <a class="dropdown-item" routerLink="/saison">Saisons</a>
+                <a class="dropdown-item" routerLink="/log">Logs</a>
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> TO Do -->
-          </form>
         </div>
     </nav>
 </header>

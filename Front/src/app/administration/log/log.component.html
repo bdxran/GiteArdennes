@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="list_gites">
+  <ul class="list">
+    <li class="ligne">
+      <span class="item">Log</span>
+      <span class="item_bis">Date</span>
+      <span class="item_bis">Nom Client</span>
+      <span class="item_bis">Gite</span>
+      <span class="item_bis">Date de début</span>
+      <span class="item_bis">Date de fin</span>
+      <span class="item_bis">Communication</span>
+    </li>
+    <li *ngFor="let log of this.logs" class="ligne_item">
+      <span class="item">{{log.idLog}}</span>
+      <span class="item_bis">{{log.dateLog}}</span>
+      <span class="item_bis">{{log.nomClient}} {{log.prenom}}</span>
+      <span class="item_bis">{{log.nomGite}}</span>
+      <span class="item_bis">{{log.dateDebut}}</span>
+      <span class="item_bis">{{log.dateFin}}</span>
+      <span class="item_bis">{{log.communication}}</span>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>

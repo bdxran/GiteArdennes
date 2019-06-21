@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PhotoService } from '../service/photo.service';
-import { GiteService } from '../service/gite.service';
+import { PhotoService } from '../service/data/photo.service';
+import { GiteService } from '../service/data/gite.service';
 
 @Component({
   selector: 'app-welcome',

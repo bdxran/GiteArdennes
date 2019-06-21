@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { API_URL } from '../app-constants';
+import { API_URL } from '../../app-constants';
 import { HttpClient } from '@angular/common/http';
 import { Admins } from './admin.service';
 import { Publiques } from './publique.service';
@@ -16,51 +16,11 @@ export class Reservations {
   private statut: string;
   private total: number;
 
-  public constructor(idReservation, idAdmin, idPublique, idGite, dateDebut, dateFin, communication, statut, total) {
+  public constructor(idReservation?, idAdmin?, idPublique?, idGite?, dateDebut?, dateFin?, communication?, statut?, total?) {
     this.idReservation = idReservation;
     this.idAdmin = idAdmin;
     this.idPublique = idPublique;
     this.idGite = idGite;
-    this.dateDebut = dateDebut;
-    this.dateFin = dateFin;
-    this.communication = communication;
-    this.statut = statut;
-    this.total = total;
-  }
-}
-
-export class ReservationsAdmin {
-  private idAdmin: Admins;
-  private idGite: Gites;
-  private dateDebut: Date;
-  private dateFin: Date;
-  private communication: string;
-  private statut: string;
-  private total: number;
-
-  public constructor( idAdmin, idGite, dateDebut, dateFin, communication, statut, total) {
-    this.idAdmin = new Admins(idAdmin);
-    this.idGite = new Gites(idGite);
-    this.dateDebut = dateDebut;
-    this.dateFin = dateFin;
-    this.communication = communication;
-    this.statut = statut;
-    this.total = total;
-  }
-}
-
-export class ReservationsPublique {
-  private idPublique: Publiques;
-  private idGite: Gites;
-  private dateDebut: Date;
-  private dateFin: Date;
-  private communication: string;
-  private statut: string;
-  private total: number;
-
-  public constructor(idPublique, idGite, dateDebut, dateFin, communication, statut, total) {
-    this.idPublique = new Publiques(idPublique);
-    this.idGite = new Gites(idGite);
     this.dateDebut = dateDebut;
     this.dateFin = dateFin;
     this.communication = communication;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BasicInscriptionService } from '../../service/basic-inscription.service';
 import { Router } from '@angular/router';
 import { BasicAuthentificateService } from '../../service/basic-authentificate.service';
-import { Admins } from '../../service/admin.service';
+import { Admins } from '../../service/data/admin.service';
 
 @Component({
   selector: 'app-signup',

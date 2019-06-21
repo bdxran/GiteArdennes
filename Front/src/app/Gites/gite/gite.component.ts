@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GiteService, Gites } from '../../service/gite.service';
-import { PhotoService } from '../../service/photo.service';
+import { GiteService, Gites } from '../../service/data/gite.service';
+import { PhotoService } from '../../service/data/photo.service';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Router } from '@angular/router';
 

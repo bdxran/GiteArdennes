@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { API_URL } from '../app-constants';
+import { API_URL } from '../../app-constants';
 
 export class Publiques {
   private idPublique;

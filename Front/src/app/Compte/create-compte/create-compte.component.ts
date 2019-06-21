@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { BasicAuthentificateService } from 'src/app/service/basic-authentificate.service';
 import { BasicInscriptionService } from 'src/app/service/basic-inscription.service';
 import { Router } from '@angular/router';
-import { Admins } from 'src/app/service/admin.service';
-import { PubliqueService, Publiques } from 'src/app/service/publique.service';
+import { Admins } from 'src/app/service/data/admin.service';
+import { PubliqueService, Publiques } from 'src/app/service/data/publique.service';
 import { VALID_ELEMENTS } from '@angular/core/src/sanitization/html_sanitizer';
-import { Villes } from 'src/app/service/ville.service';
+import { Villes } from 'src/app/service/data/ville.service';
 
 @Component({
   selector: 'app-create-compte',

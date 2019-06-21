@@ -1,0 +1,19 @@
+<app-header></app-header>
+<form class="text-center border border-light p-5">
+
+  <div class="card-header">
+      <h4 class="card-title mt-2">Ajouter une Ville</h4>
+  </div>
+
+  <label>Nom de la ville</label>
+  <input name='nom' type='text' [(ngModel)]='nom' class="form-control mb-4">
+  <label>Code Postal</label>
+  <input name='codePostal' type='text' [(ngModel)]='codePostal' class="form-control mb-4">
+  <label>Pays</label>
+  <input name='nomPays' type='text' [(ngModel)]='nomPays' class="form-control mb-4">
+
+  <button class="btn btn-info btn-block my-4" (click)="newVille()">Valider</button>
+  <button class="btn btn-info btn-block my-4" (click)="navigate('ville')">Retour</button>
+
+</form>
+<app-footer></app-footer>

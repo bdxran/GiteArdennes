@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GiteService, Gites } from '../../service/gite.service';
+import { GiteService, Gites } from '../../service/data/gite.service';
 import { BasicAuthentificateService } from '../../service/basic-authentificate.service';
-import { AdminService } from '../../service/admin.service';
+import { AdminService, Admins } from '../../service/data/admin.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -35,7 +35,9 @@ export class NewGiteComponent implements OnInit {
       adminReponse => {
         this.admin = adminReponse;
 
-        this.gite = new Gites(this.admin,this.nom,this.adresse1,this.adresse2,this.description);
+        this.admin = new Admins(this.admin.idAdmin);
+
+        this.gite = new Gites("",this.admin,this.nom,this.adresse1,this.adresse2,this.description);
 
         this.giteService.newGite(this.gite).subscribe(
           data => { 

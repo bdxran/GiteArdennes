@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { VilleService } from 'src/app/service/data/ville.service';
+import { LogService } from 'src/app/service/data/log.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-ville',
-  templateUrl: './ville.component.html',
-  styleUrls: ['./ville.component.css']
+  selector: 'app-log',
+  templateUrl: './log.component.html',
+  styleUrls: ['./log.component.css']
 })
-export class VilleComponent implements OnInit {
+export class LogComponent implements OnInit {
 
-  private ville;
+  private logs;
 
   constructor(
-    private villeService: VilleService,
+    private logService: LogService,
     private route: Router,
   ) { }
 
   ngOnInit() {
-    this.villeService.getVilles().subscribe(
+    this.logService.getLogs().subscribe(
       data => {
-        this.ville = data;
+        this.logs = data;
       }
     );
   }
