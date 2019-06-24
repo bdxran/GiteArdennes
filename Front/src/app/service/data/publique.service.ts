@@ -30,6 +30,10 @@ export class Publiques {
     this.numCompte = numCompte;
     this.blacklist = blacklist;
   }
+
+  public getIdPublique() {
+    return this.idPublique;
+  }
 }
 
 @Injectable({
@@ -52,7 +56,7 @@ export class PubliqueService {
   public getIdPublique(username) {
     let email = this.stringSplit(username,0);
     let racine = this.stringSplit(username,1);
-    return this.http.get(`${API_URL}/publiques/id`,{params:{email,racine}});
+    return this.http.get(`${API_URL}/publiques/id/`+email+"/"+racine);
   }
 
   public newPublique(publique) {

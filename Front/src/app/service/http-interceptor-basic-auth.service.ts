@@ -11,9 +11,11 @@ export class HttpInterceptorBasicAuthService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler){
     let basicAuthHeaderString = this.basicAuthenticationService.getAuthenticatedToken();
-    let username = this.basicAuthenticationService.getAuthenticatedUser()
+    let username = this.basicAuthenticationService.getAuthenticatedUser();
+    let role = this.basicAuthenticationService.getAuthenticatedRole();
     let reqauth
     console.log(username)
+    console.log(role)
     console.log(req)
     
     if(basicAuthHeaderString && username) { 
@@ -24,7 +26,7 @@ export class HttpInterceptorBasicAuthService implements HttpInterceptor {
                "Content-Type" : "application/json"
              }
            })
-      console.log('reqauth')    
+      console.log('reqauth')
       return next.handle(reqauth);
     }
 

@@ -34,7 +34,7 @@
                   <a routerLink="/welcome">Accueil</a>
               </p>
             </li>
-            <li>
+            <li *ngIf="this.role == 'admin'">
               <p>
                   <a routerLink="/gite">Gites</a>
               </p>
@@ -46,7 +46,8 @@
             </li>
             <li>
               <p>
-                  <a routerLink="/signin">Sign in</a>
+                  <a routerLink="/signin"  *ngIf="this.username == null">Sign in</a>
+                  <a routerLink="/logout"  *ngIf="this.username != null">Logout</a>
               </p>
             </li>
           </ul>
@@ -61,22 +62,22 @@
           <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
   
           <ul class="list-unstyled">
-            <li>
+            <li *ngIf="this.role == 'admin'">
               <p>
                   <a routerLink="/ville">Villes</a>
               </p>
             </li>
-            <li>
+            <li *ngIf="this.role == 'admin'">
               <p>
                   <a routerLink="/pays">Pays</a>
               </p>
             </li>
-            <li>
+            <li *ngIf="this.role == 'admin'">
               <p>
                   <a routerLink="/saison">Saisons</a>
               </p>
             </li>
-            <li>
+            <li *ngIf="this.role == 'admin'">
               <p>
                   <a routerLink="/log">Logs</a>
               </p>

@@ -1,0 +1,1818 @@
+{
+	"info": {
+		"_postman_id": "a6f713ce-c226-4c01-ab98-dd82b740e722",
+		"name": "Gite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "photo",
+			"item": [
+				{
+					"name": "newPhoto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE4ODM0MDQsImlhdCI6MTU2MTI3ODYwNH0.adHf4Zoy6_3j_y6PaDKRO3YLg9fF-J2XkcvsP9p9ZalMuMvxO83EiLZPJYaiIFA8psrSnN9EsTbpigCIVOAdcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idGite\": {\n\t\t\"idGite\": 1\n\t},\n\t\"lien\": \"./assets/gite1.jpeg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPhotos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NDk2NjksImlhdCI6MTU2MDI0NDg2OX0.WORtSEu9AVcREIfavlvaKhTPzUa_6nL_smoe22MVZTQRY3iH0ACnrOXnrMrnq_AGckjSq2uqg_eMVDqjPXfkKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPhotoById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA3ODI5MDAsImlhdCI6MTU2MDE3ODEwMH0.HHI4tUKopMLinp-W8V45I7uqjKTpU6sv-O3AehdAMIpXv4498Hz9HbHRTtLUtu4fbKcBNWQWE3tDKBqvJqEjaw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/photos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPhotosByIdGite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE0NTI2ODAsImlhdCI6MTU2MDg0Nzg4MH0.RnseLjFzRlLqn6DS_e0aWZ08xZdrr6-5ItLDS0lQNEnxaUOfYfqbCE5PYinkhGdF7n0aUBXRzh47-dNVd0f2vw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/photos/idGite/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos",
+								"idGite",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePhoto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idPhoto\": 1,\n\t\"idGite\": {\n\t\t\"idGite\": 1\n\t},\n\t\"lien\": \"./assets/gite2.jpeg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePhoto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/photos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"photos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gite",
+			"item": [
+				{
+					"name": "getGites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTg1NjYsImlhdCI6MTU2MDI1Mzc2Nn0.rQMAcy4BD7IEhr2et29t28hUCNlUq-43slJv6x7yZJ27VjqKtIhXPlQnG9u0ygbJ9D0xnWZor6YaT-43lyNeQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newGite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE4ODM0MDQsImlhdCI6MTU2MTI3ODYwNH0.adHf4Zoy6_3j_y6PaDKRO3YLg9fF-J2XkcvsP9p9ZalMuMvxO83EiLZPJYaiIFA8psrSnN9EsTbpigCIVOAdcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idAdmin\": {\n\t\t\"idAdmin\": 1\n\t},\n\t\"nom\": \"Framboise\",\n\t\"adresse1\": \"Rue du Verger 51\",\n\t\"adresse2\": \"5000 Bouillon\",\n\t\"description\": \"Magnifique\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/gites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGitesById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTg1NjYsImlhdCI6MTU2MDI1Mzc2Nn0.rQMAcy4BD7IEhr2et29t28hUCNlUq-43slJv6x7yZJ27VjqKtIhXPlQnG9u0ygbJ9D0xnWZor6YaT-43lyNeQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gites/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gites",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdGite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTg1NjYsImlhdCI6MTU2MDI1Mzc2Nn0.rQMAcy4BD7IEhr2et29t28hUCNlUq-43slJv6x7yZJ27VjqKtIhXPlQnG9u0ygbJ9D0xnWZor6YaT-43lyNeQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gites/nom/Noisette",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gites",
+								"nom",
+								"Noisette"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateGite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idGite\": 2,\n\t\"idAdmin\": {\n\t\t\"idAdmin\": 1\n\t},\n\t\"nom\": \"Framboise\",\n\t\"adresse1\": \"Rue du verger 48\",\n\t\"adresse2\": \"5000 Bouillon\",\n\t\"description\": \"Magnifique\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/gites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gites/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gites",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "newAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTE1NjMsImlhdCI6MTU2MDI0Njc2M30.XGsDSPnvhA3DDoQil3slmL03hsD6clqm8lMkzJb4zZp8gaEYSp1H0ApcKKSEHZirIYQCF8WRhGM9PQdBbcANxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"login\": \"test\",\n\t\"mdp\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdmins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTE1NjMsImlhdCI6MTU2MDI0Njc2M30.XGsDSPnvhA3DDoQil3slmL03hsD6clqm8lMkzJb4zZp8gaEYSp1H0ApcKKSEHZirIYQCF8WRhGM9PQdBbcANxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdminById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTE1NjMsImlhdCI6MTU2MDI0Njc2M30.XGsDSPnvhA3DDoQil3slmL03hsD6clqm8lMkzJb4zZp8gaEYSp1H0ApcKKSEHZirIYQCF8WRhGM9PQdBbcANxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admins/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NTE1NjMsImlhdCI6MTU2MDI0Njc2M30.XGsDSPnvhA3DDoQil3slmL03hsD6clqm8lMkzJb4zZp8gaEYSp1H0ApcKKSEHZirIYQCF8WRhGM9PQdBbcANxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admins/login/bdxran",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"login",
+								"bdxran"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idAdmin\": 2,\n\t\"login\": \"test\",\n\t\"mdp\": \"1234\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "publiques",
+			"item": [
+				{
+					"name": "newPubliques",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idVille\": {\n\t\t\"idVille\": 1\n\t},\n\t\"nom\": \"Dubuisson\",\n\t\"prenom\": \"Julien\",\n\t\"mdp\": \"1234\",\n\t\"adresse1\": \"Rue de Boulanger 32\",\n\t\"adresse2\": \"7000 Mons\",\n\t\"adresse3\": \"Belgique\",\n\t\"telephone\": \"0487561245\",\n\t\"email\": \"juju@hotmail.be\",\n\t\"numCompte\": \"048458745\",\n\t\"blacklist\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/publiques",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publiques"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPubliques",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publiques",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publiques"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIdPublique",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publiques/id/juju@hotmail/be?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publiques",
+								"id",
+								"juju@hotmail",
+								"be"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "bdxran@hotmail.be",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPubliqueById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publiques/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publiques",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPubliquesByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publiques/name/Blondiaux/Randy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publiques",
+								"name",
+								"Blondiaux",
+								"Randy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePublique",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE2NDAyOTgsImlhdCI6MTU2MTAzNTQ5OH0.cJtupZFiZuoNrROTDdFBtvF5Js0SZj8Hbc8DXVrLl9gjkJRaOg3mgaGwOM2yRZAaEA_UhEgq7lmxNlINRKAj4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idPublique\": 2,\n\t\"idVille\": {\n\t\t\"idVille\": 1\n\t},\n\t\"nom\": \"Dubuisson\",\n\t\"prenom\": \"Julien\",\n\t\"mdp\": \"1234\",\n\t\"adresse1\": \"Rue de Maubeuge 15\",\n\t\"adresse2\": \"7130 Binche\",\n\t\"adresse3\": \"Belgique\",\n\t\"telephone\": \"0487561245\",\n\t\"email\": \"juju@hotmail.be\",\n\t\"numCompte\": \"048458745\",\n\t\"blacklist\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/publiques",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publiques"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pays",
+			"item": [
+				{
+					"name": "getPays",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPaysById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pays/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pays",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPaysByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pays/Belgique",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pays",
+								"Belgique"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newPays",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE4ODM0MDQsImlhdCI6MTU2MTI3ODYwNH0.adHf4Zoy6_3j_y6PaDKRO3YLg9fF-J2XkcvsP9p9ZalMuMvxO83EiLZPJYaiIFA8psrSnN9EsTbpigCIVOAdcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nom\": \"Belgique\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/pays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePays",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"code\": 2,\n\t\"nom\": \"France\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/pays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pays"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "villes",
+			"item": [
+				{
+					"name": "getVilles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/villes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"villes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVilleById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/villes/id/7130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"villes",
+								"id",
+								"7130"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVilleByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/villes/Binche",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"villes",
+								"Binche"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newVille",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE4ODM0MDQsImlhdCI6MTU2MTI3ODYwNH0.adHf4Zoy6_3j_y6PaDKRO3YLg9fF-J2XkcvsP9p9ZalMuMvxO83EiLZPJYaiIFA8psrSnN9EsTbpigCIVOAdcQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": {\n        \"code\": 1\n    },\n    \"codePostal\": \"7130\",\n    \"nom\": \"Binche\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/villes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"villes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVille",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idVille\": 2,\n    \"code\": {\n        \"code\": 1\n    },\n    \"codePostal\": \"7130\",\n    \"nom\": \"Binche\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/villes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"villes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "getReservations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservations/id/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations",
+								"id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationByIdGite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idGite\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservations/gite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations",
+								"gite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationByIdPublique",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE5NzEyNjAsImlhdCI6MTU2MTM2NjQ2MH0.FpZyP0JycVMijxHG0QvE6b6otlXFFELUYT_U7mNL092C0Pm6UKyQzOSXbLzV3a1tfskRTFOm8hXfE67icTgRYw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idPublique\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservations/publique",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations",
+								"publique"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationByIdAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idAdmin\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservations/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE5NzEyNjAsImlhdCI6MTU2MTM2NjQ2MH0.FpZyP0JycVMijxHG0QvE6b6otlXFFELUYT_U7mNL092C0Pm6UKyQzOSXbLzV3a1tfskRTFOm8hXfE67icTgRYw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idPublique\": {\n\t\t\"idPublique\": 1\n\t},\n\t\"idGite\": {\n\t\t\"idGite\": 1\n\t},\n\t\"dateDebut\": \"2019-05-17\",\n\t\"dateFin\": \"2019-05-20\",\n\t\"total\": 500,\n\t\"communication\": \"01-546278-56\",\n\t\"statut\": \"reserve\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idReservation\": 8,\n\t\"idPublique\": {\n\t\t\"idPublique\": 1\n\t},\n\t\"idGite\": {\n\t\t\"idGite\": 1\n\t},\n\t\"dateDebut\": \"2019-05-17\",\n\t\"dateFin\": \"2019-05-20\",\n\t\"total\": 1000,\n\t\"communication\": \"01-546278-56\",\n\t\"statut\": \"reserve\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservations/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservations",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Saisons",
+			"item": [
+				{
+					"name": "getSaisons",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/saisons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSaisonById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/saisons/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSaisonByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/saisons/name/ete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons",
+								"name",
+								"ete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newSaison",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE5ODYyODYsImlhdCI6MTU2MTM4MTQ4Nn0.Hwr_kSOTA4QamFBVPspN_uwTUvyhrrpuf5CbkIqlsJNWylEuuy5NusztZxOj5iYw-m37ZuZbi_GPhyTFoLVAGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idGite\": {\n\t\t\"idGite\": 1\n\t},\n\t\"dateDebut\": \"2019-03-21\",\n\t\"dateFin\": \"2019-06-21\",\n\t\"nom\": \"printemps\",\n\t\"tarif\": 50\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/saisons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSaison",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idSaison\": 2,\n\t\"idGite\": {\n\t\t\"idGite\": 1\n\t},\n\t\"dateDebut\": \"2019-06-21\",\n\t\"dateFin\": \"2019-09-21\",\n\t\"nom\": \"hiver\",\n\t\"tarif\": 500\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/saisons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSaison",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/saisons/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSaisonByDateDebut",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjE5ODYyODYsImlhdCI6MTU2MTM4MTQ4Nn0.Hwr_kSOTA4QamFBVPspN_uwTUvyhrrpuf5CbkIqlsJNWylEuuy5NusztZxOj5iYw-m37ZuZbi_GPhyTFoLVAGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/saisons/dateDebut/2019-05-17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saisons",
+								"dateDebut",
+								"2019-05-17"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2019-05-17",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "getLogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLogsByDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiZHhyYW4iLCJleHAiOjE1NjA4NjQ3ODksImlhdCI6MTU2MDI1OTk4OX0.mzEnFdAGmGN1Qs6tpA0xgKxTi4-yY18qsypmrjWSZ6DNaqvGd7HBWMExxIdQpGUl7PGO9oAFJ_0UmruyHSWHSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/logs?date=2019-02-02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logs"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2019-02-02"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"bdxran\",\n\t\"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -39,7 +39,9 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
     
 	  Optional<Admins> stu = adminsRepository.adminByLogin(login).stream().findFirst();
 	  
-	  Publiques pub = publiquesRepository.getIdPublique(login);
+	  String email = login;
+	  
+	  Publiques pub = publiquesRepository.getIdPublique(email);
 	    
 	  Optional<JwtUserDetails> user = Optional.empty();
 	  

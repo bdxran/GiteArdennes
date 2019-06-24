@@ -16,19 +16,31 @@
                 <a class="dropdown-item" routerLink="/signin">Sign in</a>
                 <a class="dropdown-item" routerLink="/createCompte">Sign up</a>
               </div>
-              <div *ngIf="this.username != null" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+              <div *ngIf="this.role == 'admin'" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" routerLink="/user">View</a>
-                <a class="dropdown-item" routerLink="/signup">SignUp</a>
+                <!-- <a class="dropdown-item" routerLink="/profil">Profil</a>   TO DO -->
+                <a class="dropdown-item" routerLink="/signup">Ajouter admin</a>
+                <a class="dropdown-item" routerLink="/logout">Logout</a>
+              </div>
+              <div *ngIf="this.role == 'user'" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <!-- <a class="dropdown-item" routerLink="/profil">Profil</a>   TO DO -->
                 <a class="dropdown-item" routerLink="/logout">Logout</a>
               </div>
             </li>
-            <li *ngIf="this.username != null" class="nav-item active">
+            <li *ngIf="this.role == 'admin'" class="nav-item active">
               <a class="nav-link" routerLink="/gite">Gites<span class="sr-only">(current)</span></a>
             </li>
+            <li *ngIf="this.role == 'user'" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">Gites</a>
+                <div *ngFor="let git of gites"class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" (click)="navigate('reserveGite',git.idGite)">{{git.nom}}</a>
+                </div>
+              </li>
             <li *ngIf="this.username != null" class="nav-item active">
               <a class="nav-link" routerLink="/reservation">Reservations<span class="sr-only">(current)</span></a>
             </li>
-            <li *ngIf="this.username != null"  class="nav-item dropdown">
+            <li *ngIf="this.role == 'admin'"  class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Administration</a>
               <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">

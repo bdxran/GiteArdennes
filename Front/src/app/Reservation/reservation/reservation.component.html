@@ -10,8 +10,8 @@
       <span class="item_bis">Supprimer</span>
     </li>
     <li *ngFor="let res of this.reservation; let i = index"class="ligne_item">
-      <span class="item">{{i}}</span>
-      <a class="item_bis" (click)="getNameGite(res.idGite.idGite)">{{this.nom}}</a>
+      <span class="item">{{i+1}}</span>
+      <a class="item_bis">{{this.res.idGite.nom}}</a>
       <span class="item_bis">{{res.dateDebut}}</span>
       <span class="item_bis">{{res.dateFin}}</span>
       <span class="item_bis">

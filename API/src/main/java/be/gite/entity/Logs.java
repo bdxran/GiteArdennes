@@ -11,21 +11,12 @@ public class Logs {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idLog", updatable = false, nullable = false)
 	private Integer idLog;
-
-	@Column(name = "nomClient", updatable = false, nullable = false)
-	private String nomClient;
-	@Column(name = "prenom", updatable = false, nullable = false)
-	private String prenom;
-	@Column(name = "adresse1", updatable = false, nullable = false)
-	private String adresse1;
-	@Column(name = "adresse2", updatable = false, nullable = false)
-	private String adresse2;
-	@Column(name = "adresse3", updatable = false, nullable = false)
-	private String adresse3;
-	@Column(name = "numCompte", updatable = false, nullable = false)
-	private String numCompte;
-	@Column(name = "nomGite", updatable = false, nullable = false)
-	private String nomGite;
+	@Column(name = "idAdmin", updatable = false, nullable = true)
+	private Integer idAdmin;
+	@Column(name = "idPublique", updatable = false, nullable = true)
+	private Integer idPublique;
+	@Column(name = "idGite", updatable = false, nullable = false)
+	private Integer idGite;
 	@Column(name = "dateDebut", updatable = false, nullable = false)
 	private Date dateDebut;
 	@Column(name = "dateFin", updatable = false, nullable = false)
@@ -36,6 +27,8 @@ public class Logs {
 	private Float total;
 	@Column(name = "dateLog", updatable = false, nullable = false)
 	private Date dateLog;
+	@Column(name = "operation", updatable = false, nullable = false)
+	private String operation;
 
 	public Logs() {
 		super();
@@ -49,60 +42,28 @@ public class Logs {
 		this.idLog = idLog;
 	}
 
-	public String getNomClient() {
-		return nomClient;
+	public Integer getIdAdmin() {
+		return idAdmin;
 	}
 
-	public void setNomClient(String nomClient) {
-		this.nomClient = nomClient;
+	public void setIdAdmin(Integer idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 
-	public String getPrenom() {
-		return prenom;
+	public Integer getIdPublique() {
+		return idPublique;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setIdPublique(Integer idPublique) {
+		this.idPublique = idPublique;
 	}
 
-	public String getAdresse1() {
-		return adresse1;
+	public Integer getIdGite() {
+		return idGite;
 	}
 
-	public void setAdresse1(String adresse1) {
-		this.adresse1 = adresse1;
-	}
-
-	public String getAdresse2() {
-		return adresse2;
-	}
-
-	public void setAdresse2(String adresse2) {
-		this.adresse2 = adresse2;
-	}
-
-	public String getAdresse3() {
-		return adresse3;
-	}
-
-	public void setAdresse3(String adresse3) {
-		this.adresse3 = adresse3;
-	}
-
-	public String getNumCompte() {
-		return numCompte;
-	}
-
-	public void setNumCompte(String numCompte) {
-		this.numCompte = numCompte;
-	}
-
-	public String getNomGite() {
-		return nomGite;
-	}
-
-	public void setNomGite(String nomGite) {
-		this.nomGite = nomGite;
+	public void setIdGite(Integer idGite) {
+		this.idGite = idGite;
 	}
 
 	public Date getDateDebut() {
@@ -137,12 +98,27 @@ public class Logs {
 		this.total = total;
 	}
 
-	@Override
-	public String toString() {
-		return "Logs [idLog=" + idLog + ", nomClient=" + nomClient + ", prenom=" + prenom + ", adresse1=" + adresse1
-				+ ", adresse2=" + adresse2 + ", adresse3=" + adresse3 + ", numCompte=" + numCompte + ", nomGite="
-				+ nomGite + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", communication=" + communication
-				+ ", total=" + total + "]";
+	public Date getDateLog() {
+		return dateLog;
 	}
 
+	public void setDateLog(Date dateLog) {
+		this.dateLog = dateLog;
+	}
+
+	public String getOperation() {
+		return operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+	}
+
+	@Override
+	public String toString() {
+		return "Logs [idLog=" + idLog + ", idAdmin=" + idAdmin + ", idPublique=" + idPublique + ", idGite=" + idGite
+				+ ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", communication=" + communication + ", total="
+				+ total + ", dateLog=" + dateLog + ", operation=" + operation + "]";
+	}
+	
 }

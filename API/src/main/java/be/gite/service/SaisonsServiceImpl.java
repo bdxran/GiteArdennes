@@ -1,5 +1,7 @@
 package be.gite.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,14 @@ public class SaisonsServiceImpl implements SaisonsService {
 
 	public Saisons getSaisonByName(String nom) {
 		return repository.getSaisonByName(nom);
+	}
+	
+	public Saisons getSaisonByDateDebut(Date date) {
+		return repository.getSaisonByDateDebut(date);
+	}
+	
+	public Saisons getSaisonByDateFin(Date date) {
+		return repository.getSaisonByDateFin(date);
 	}
 
 	public Saisons newSaison(Saisons saison) {

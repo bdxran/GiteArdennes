@@ -41,6 +41,14 @@ export class SaisonService {
     return this.http.get(`${API_URL}/saisons/name/`+name);
   }
 
+  public getSaisonByDateDebut(date) {
+    return this.http.get(`${API_URL}/saisons/dateDebut/`+date);
+  }
+
+  public getSaisonByDateFin(date) {
+    return this.http.get(`${API_URL}/saisons/dateFin/`+date);
+  }
+
   public newSaisons(saison) {
     saison = JSON.stringify(saison);
     return this.http.post<any>(`${API_URL}/saisons`,saison);

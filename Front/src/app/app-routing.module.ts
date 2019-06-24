@@ -7,7 +7,7 @@ import { SignupComponent } from './Compte/signup/signup.component';
 import { LogoutComponent } from './Compte/logout/logout.component';
 import { GiteComponent } from './Gites/gite/gite.component';
 import { NewGiteComponent } from './Gites/new-gite/new-gite.component';
-import { RouteGuardService } from './service/data/route-guard.service';
+import { RouteGuardService } from './service/route-guard.service';
 import { UpdateGiteComponent } from './Gites/update-gite/update-gite.component';
 import { ViewGiteComponent } from './Gites/view-gite/view-gite.component';
 import { ReserveGiteComponent } from './Reservation/reserve-gite/reserve-gite.component';

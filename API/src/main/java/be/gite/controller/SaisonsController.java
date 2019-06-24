@@ -1,5 +1,7 @@
 package be.gite.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,6 +44,21 @@ public class SaisonsController {
 	@ResponseBody
 	public Saisons getSaisonByName(@PathVariable String nom) {
 		return service.getSaisonByName(nom);
+	}
+	
+	@GetMapping(value = "/dateDebut/{date}")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public Saisons getSaisonByDateDebut(@PathVariable Date date) {
+		System.out.println(date);
+		return service.getSaisonByDateDebut(date);
+	}
+	
+	@GetMapping(value = "/dateFin/{date}")
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public Saisons getSaisonByDateFin(@PathVariable Date date) {
+		return service.getSaisonByDateFin(date);
 	}
 
 	@PostMapping(consumes = "application/json")

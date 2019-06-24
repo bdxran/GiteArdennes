@@ -13,6 +13,6 @@ public interface PubliquesRepository extends JpaRepository<Publiques, Integer>, 
 	@Query("SELECT p from Publiques p where p.nom = :nom AND p.prenom = :prenom")
 	List<Publiques> getPubliquesByName(@Param("nom") String nom, @Param("prenom") String prenom);
 
-	@Query("SELECT p.idPublique from Publiques p where p.email = :email")
+	@Query("SELECT p from Publiques p where p.email = :email")
 	Publiques getIdPublique(@Param("email") String email);
 }
